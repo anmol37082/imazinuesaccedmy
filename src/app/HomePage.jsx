@@ -1,3 +1,4 @@
+import DigitalMarketing from "@/components/DigitalMarketing";
 import Footer from "@/components/Footer";
 import GraphicDesining from "@/components/GraphicDesining";
 import Header from "@/components/Header";
@@ -20,6 +21,7 @@ function HomePage() {
         <GraphicDesining />
         <HomeBanner3 />
         <VideoEditing />
+        <DigitalMarketing />
         <Reviews />
         <InquiryForm />
       </main>

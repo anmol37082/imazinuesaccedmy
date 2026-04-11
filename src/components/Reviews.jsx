@@ -242,6 +242,18 @@ function Reviews() {
     let ticking = false;
     let hasUserScrolled = false;
 
+    const getCardsPerRow = () => {
+      if (window.innerWidth <= 640) {
+        return 1;
+      }
+
+      if (window.innerWidth <= 960) {
+        return 2;
+      }
+
+      return 3;
+    };
+
     const updateVisibleCount = () => {
       if (!sectionRef.current) {
         return;
@@ -252,12 +264,14 @@ function Reviews() {
       const triggerLine = viewportHeight * 0.36;
       const revealDistance = triggerLine - rect.top;
       const stepDistance = viewportHeight * 0.15;
-      const nextVisibleCount = revealDistance <= 0
+      const cardsPerRow = getCardsPerRow();
+      const revealedRows = revealDistance <= 0
         ? 0
-        : Math.max(
-            0,
-            Math.min(reviews.length, Math.floor(revealDistance / stepDistance))
-          );
+        : Math.floor(revealDistance / stepDistance);
+      const nextVisibleCount = Math.max(
+        0,
+        Math.min(reviews.length, revealedRows * cardsPerRow)
+      );
 
       setVisibleCount(nextVisibleCount);
     };
@@ -281,6 +295,7 @@ function Reviews() {
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", requestUpdate);
 
     return () => {
       if (frameId) {
@@ -290,6 +305,7 @@ function Reviews() {
         setVisibleCount(0);
       }
       window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", requestUpdate);
     };
   }, []);
 
