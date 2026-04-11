@@ -1,0 +1,174 @@
+/* [project]/src/components/StatsAndFacts.module.css [app-client] (css) */
+.StatsAndFacts-module__duopOW__section {
+  z-index: 2;
+  box-sizing: border-box;
+  background: #000;
+  width: 100%;
+  margin: -38px 0 0;
+  padding: 0 32px 58px;
+  position: relative;
+}
+
+.StatsAndFacts-module__duopOW__copy {
+  grid-template-columns: 320px minmax(0, 1fr);
+  align-items: start;
+  gap: 28px;
+  margin: 24px 0 88px;
+  display: grid;
+}
+
+.StatsAndFacts-module__duopOW__eyebrowWrap {
+  align-items: center;
+  gap: 10px;
+  padding-top: 14px;
+  display: inline-flex;
+}
+
+.StatsAndFacts-module__duopOW__eyebrowDot {
+  background: #00ef02;
+  border-radius: 2px;
+  flex-shrink: 0;
+  width: 9px;
+  height: 9px;
+}
+
+.StatsAndFacts-module__duopOW__eyebrow {
+  color: #fff;
+  letter-spacing: -.03em;
+  font-family: Sora, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.StatsAndFacts-module__duopOW__intro {
+  color: #ffffff57;
+  letter-spacing: -.05em;
+  white-space: pre-wrap;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding-right: 68px;
+  font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
+  font-size: clamp(1.96rem, 3.45vw, 2.9rem);
+  font-weight: 450;
+  line-height: 1.16;
+}
+
+.StatsAndFacts-module__duopOW__introWord {
+  white-space: nowrap;
+}
+
+.StatsAndFacts-module__duopOW__introChar {
+  color: #ffffff57;
+  opacity: .28;
+  transition: color .42s, opacity .42s, transform .42s;
+  display: inline-block;
+  transform: translateY(.08em);
+}
+
+.StatsAndFacts-module__duopOW__introCharVisible {
+  color: #fff;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.StatsAndFacts-module__duopOW__grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 26px;
+  display: grid;
+}
+
+.StatsAndFacts-module__duopOW__card {
+  text-align: center;
+  background: #000;
+  padding: 14px 20px 24px;
+}
+
+.StatsAndFacts-module__duopOW__value {
+  color: #fff;
+  letter-spacing: -.06em;
+  margin: 0 0 20px;
+  font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
+  font-size: clamp(3.4rem, 6.8vw, 5rem);
+  font-weight: 700;
+  line-height: .9;
+}
+
+.StatsAndFacts-module__duopOW__label {
+  color: #ffffffdb;
+  text-align: center;
+  border-top: 1px solid #ffffff29;
+  margin: 0;
+  padding-top: 18px;
+  font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 1.35;
+}
+
+.StatsAndFacts-module__duopOW__labelStrong {
+  font-size: 1.16rem;
+  font-weight: 700;
+  display: block;
+}
+
+.StatsAndFacts-module__duopOW__labelSubtext {
+  font-size: .84rem;
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .StatsAndFacts-module__duopOW__section {
+    margin-top: -26px;
+    padding: 40px 24px 0;
+  }
+
+  .StatsAndFacts-module__duopOW__copy {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    margin: 20px 10px 64px;
+  }
+
+  .StatsAndFacts-module__duopOW__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 540px) {
+  .StatsAndFacts-module__duopOW__section {
+    margin-top: -18px;
+    padding: 34px 18px 0;
+  }
+
+  .StatsAndFacts-module__duopOW__eyebrow {
+    font-size: 1.08rem;
+  }
+
+  .StatsAndFacts-module__duopOW__intro {
+    margin: 0;
+    padding-right: 0;
+    font-size: clamp(1.65rem, 7.3vw, 2.5rem);
+  }
+
+  .StatsAndFacts-module__duopOW__value {
+    font-size: clamp(4.3rem, 17vw, 5.9rem);
+  }
+
+  .StatsAndFacts-module__duopOW__label {
+    font-size: 1.2rem;
+  }
+
+  .StatsAndFacts-module__duopOW__labelStrong {
+    font-size: 1.26rem;
+  }
+
+  .StatsAndFacts-module__duopOW__labelSubtext {
+    font-size: .94rem;
+  }
+
+  .StatsAndFacts-module__duopOW__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/*# sourceMappingURL=src_components_StatsAndFacts_module_css_0w3-wzy._.single.css.map*/

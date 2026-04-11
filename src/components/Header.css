@@ -1,0 +1,333 @@
+body {
+  font-family: "Avenir Next", sans-serif;
+  margin: 0;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+  margin: 0;
+  padding: 16px 24px 16px 8px;
+  background: transparent;
+  color: #ffffff;
+  box-sizing: border-box;
+  transition:
+    margin 0.25s ease,
+    top 0.25s ease;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  height: 64px;
+  overflow: visible;
+  margin-left: -128px;
+}
+
+.logoImage {
+  display: block;
+  width: 576px;
+  height: 192px;
+  object-fit: contain;
+  transform: translateX(-28px);
+  transform-origin: left center;
+  margin: 0;
+}
+
+.hover-text {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.06em;
+  white-space: nowrap;
+  font-variant-ligatures: none;
+}
+
+.hover-char {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1ch;
+  line-height: 1;
+}
+
+.hover-char.is-space {
+  min-width: 0.75ch;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  justify-content: flex-end;
+  gap: 14px;
+}
+
+.btn,
+.menuToggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menuToggle {
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.06);
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.headerButton {
+  min-width: 156px;
+}
+
+.menuToggle span {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: #ffffff;
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.menuToggleOpen span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.menuToggleOpen span:nth-child(2) {
+  opacity: 0;
+}
+
+.menuToggleOpen span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+.btn {
+  position: relative;
+  gap: 10px;
+  min-height: 44px;
+  min-width: 148px;
+  padding: 0 18px;
+  border: none;
+  background: #00ef02;
+  color: #0b0b0b;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 30px;
+  letter-spacing: 1px;
+  font-family: "Avenir Next", sans-serif;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.btn::after {
+  content: "";
+  position: absolute;
+  top: -118%;
+  left: -10%;
+  width: 8%;
+  height: 260%;
+  border-radius: 999px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.3) 16%,
+    rgba(255, 255, 255, 1) 36%,
+    rgba(255, 255, 255, 1) 64%,
+    rgba(255, 255, 255, 0.3) 84%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  filter: blur(3px);
+  opacity: 0;
+  transform: rotate(38deg);
+  pointer-events: none;
+}
+
+.btn:hover::after {
+  animation: buttonWhiteSweep 0.9s ease-out 1;
+}
+
+.btnLabel,
+.btn-icon {
+  position: relative;
+  z-index: 1;
+  display: block;
+}
+
+.btnLabel {
+  white-space: nowrap;
+}
+
+.btn-icon {
+  flex-shrink: 0;
+}
+
+.mobileDrawerButton {
+  display: none;
+  width: 100%;
+  margin-top: auto;
+}
+
+.menuBackdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.18);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.75s ease;
+  z-index: 39;
+}
+
+.menuBackdropOpen {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.sideMenu {
+  position: fixed;
+  top: 92px;
+  right: 0;
+  width: min(380px, 100vw);
+  height: calc(100svh - 112px);
+  padding: 28px 24px;
+  background: rgba(12, 12, 12, 0.4);
+  border-left: 1px solid rgba(255, 255, 255, 0.14);
+  box-sizing: border-box;
+  transform: translateX(100%);
+  transition:
+    transform 1.05s cubic-bezier(0.16, 1, 0.3, 1),
+    background-color 0.75s ease;
+  z-index: 40;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+   -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  box-shadow: -24px 0 60px rgba(0, 0, 0, 0.22);
+}
+
+.sideMenuOpen {
+  transform: translateX(0);
+}
+
+.sideMenuList {
+  margin: 72px 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+.sideMenuList a {
+  display: inline-flex;
+  color: #ffffff;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 30px;
+  letter-spacing: 0.1px;
+  font-family: "Sora", sans-serif;
+  text-decoration: none;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.sideMenuList .hover-text {
+  gap: 0;
+}
+
+.sideMenuList .hover-char {
+  min-width: auto;
+}
+
+.sideMenuList .hover-char.is-space {
+  min-width: 0.45ch;
+}
+
+@keyframes buttonWhiteSweep {
+  from {
+    top: -118%;
+    left: -14%;
+    opacity: 0;
+    transform: rotate(38deg);
+  }
+
+  16% {
+    opacity: 1;
+  }
+
+  78% {
+    opacity: 1;
+  }
+
+  to {
+    top: -14%;
+    left: 152%;
+    opacity: 0;
+    transform: rotate(38deg);
+  }
+}
+
+@media (max-width: 900px) {
+  .navbar {
+    padding: 16px 20px 16px 8px;
+  }
+}
+
+@media (max-width: 540px) {
+  .navbar {
+    padding: 14px 14px 14px 6px;
+    gap: 8px;
+  }
+
+  .logo {
+    flex: 1 1 auto;
+    min-width: 0;
+    max-width: calc(100vw - 84px);
+    margin-left: -58px;
+    overflow: hidden;
+  }
+
+  .logoImage {
+    width: 320px;
+    height: 107px;
+    transform: translateX(-14px);
+  }
+
+  .right {
+    flex-shrink: 0;
+    gap: 8px;
+  }
+
+  .headerButton {
+    min-width: 0;
+    padding-inline: 16px;
+    display: none;
+  }
+
+  .sideMenu {
+    top: 84px;
+    height: calc(100svh - 100px);
+  }
+
+  .mobileDrawerButton {
+    display: inline-flex;
+  }
+}

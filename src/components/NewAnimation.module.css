@@ -1,0 +1,224 @@
+
+
+.newAnimation {
+  --stage-offset: clamp(28px, 5vh, 56px);
+  position: relative;
+  display: block;
+  width: 100vw;
+  max-width: none;
+  height: 210svh;
+  min-height: 1320px;
+  background: #000000;
+  margin: 0 calc(50% - 50vw);
+  overflow: clip;
+  isolation: isolate;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  contain: paint;
+}
+
+.mobileBannerSection {
+  width: 100vw;
+  margin: 0 calc(50% - 50vw);
+  background: #000000;
+  line-height: 0;
+}
+
+.mobileBannerImage {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.newAnimationStage {
+  position: sticky;
+  top: var(--stage-offset);
+  height: calc(100svh - var(--stage-offset));
+  overflow: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
+}
+
+.newAnimationBg {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+.newAnimationImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000000;
+  z-index: 0;
+}
+
+.newOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000000;
+  z-index: 1;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+.newAnimImage {
+  position: absolute;
+  width: calc(14.28% - 2px);
+  height: 27vh;
+  object-fit: cover;
+  object-position: center top;
+  will-change: auto;
+  transition: none !important;
+  z-index: 3;
+  border-radius: 12px;
+  box-shadow: none;
+  bottom: -70px;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  contain: layout style;
+}
+
+.newAnimImage1 { left: 0%; height: 27vh; bottom: -70px; }
+.newAnimImage2 { left: calc(14.28% + 1px); }
+.newAnimImage3 { left: calc(28.57% + 1.5px); }
+.newAnimImage4 { left: calc(42.85% + 2px); }
+.newAnimImage5 { left: calc(57.14% + 2px); }
+.newAnimImage6 { left: calc(71.42% + 2.5px); }
+.newAnimImage7 { left: calc(85.71% + 2px); height: 27vh; bottom: -70px; }
+
+.textImageWrap {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  opacity: 0;
+  filter: blur(18px);
+  transition:
+    opacity 0.75s ease,
+    filter 0.9s ease;
+  pointer-events: none;
+}
+
+.textImageLoaded {
+  opacity: 1;
+  filter: blur(0);
+}
+
+.textImage {
+  position: absolute;
+  top: 1%;
+  left: 50%;
+  -webkit-transform: translate3d(-50%, 0, 0);
+  transform: translate3d(-50%, 0, 0);
+  max-width: 90%;
+  max-height: 60vh;
+  width: auto;
+  height: auto;
+  z-index: 1;
+  border-radius: 8px;
+  object-fit: contain;
+  will-change: auto;
+  transition: none !important;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  contain: layout style;
+}
+
+@media (max-width: 768px) {
+  .newAnimation {
+    height: 138svh;
+    min-height: 760px;
+  }
+
+  .newAnimationStage {
+    height: 100dvh;
+  }
+
+  .newAnimationBg {
+    padding-top: calc(env(safe-area-inset-top, 0px) + 12px);
+    box-sizing: border-box;
+  }
+
+  .newAnimImage {
+    width: calc(14.28% - 2px);
+    height: 20vh;
+    min-height: 132px;
+    bottom: 14px;
+    border-radius: 8px;
+    box-shadow: none;
+  }
+
+  .newAnimImage1,
+  .newAnimImage7 {
+    height: 20vh;
+    min-height: 132px;
+    bottom: 14px;
+  }
+
+  .textImageWrap {
+    inset: 0 0 auto;
+    min-height: 100%;
+  }
+
+  .textImage {
+    top: clamp(72px, 15vh, 118px);
+    max-width: min(90vw, 420px);
+    max-height: 24vh;
+  }
+
+  .mobileBannerSection {
+    min-height: 100dvh;
+  }
+
+  .mobileBannerImage {
+    min-height: 100dvh;
+    object-fit: cover;
+  }
+}
+
+@media (max-width: 540px) {
+  .mobileBannerSection {
+    min-height: 0;
+  }
+
+  .mobileBannerImage {
+    min-height: 0;
+  }
+}
+
+
+@supports (-webkit-touch-callout: none) {
+  .newAnimation { height: 200svh; min-height: 1200px; }
+  .newAnimImage, .textImage { 
+    transition: none !important; 
+    animation: none !important;
+  }
+  .newAnimationStage { overflow: visible; clip-path: inset(0 0 0 0); }
+}
+
+@supports (-webkit-touch-callout: none) and (max-width: 768px) {
+  .newAnimation {
+    height: 132svh;
+    min-height: 720px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .newAnimImage, .textImage, .textImageWrap { transition: none !important; animation: none !important; }
+  .textImageWrap { opacity: 1; filter: blur(0); }
+}

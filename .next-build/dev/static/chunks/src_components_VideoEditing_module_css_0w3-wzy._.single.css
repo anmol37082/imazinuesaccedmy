@@ -1,0 +1,184 @@
+/* [project]/src/components/VideoEditing.module.css [app-client] (css) */
+.VideoEditing-module__Y0Gm_W__section {
+  box-sizing: border-box;
+  background: #000;
+  width: 100%;
+  padding: 0;
+  line-height: 0;
+}
+
+.VideoEditing-module__Y0Gm_W__videoFrame {
+  background: #000;
+  border-radius: 0;
+  width: 100%;
+  height: clamp(320px, 56.25vw, 100dvh);
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.VideoEditing-module__Y0Gm_W__video {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.VideoEditing-module__Y0Gm_W__headingWrap {
+  z-index: 2;
+  text-align: left;
+  color: #fff;
+  pointer-events: none;
+  width: min(78%, 720px);
+  line-height: 1.1;
+  position: absolute;
+  top: clamp(6px, 1.6vw, 16px);
+  left: clamp(6px, 1.2vw, 16px);
+  transform: none;
+}
+
+.VideoEditing-module__Y0Gm_W__heading {
+  letter-spacing: -.05em;
+  text-transform: uppercase;
+  margin: 0;
+  font-family: Sora, sans-serif;
+  font-size: clamp(20px, 3.3vw, 42px);
+  font-weight: 700;
+  line-height: 1.05;
+}
+
+.VideoEditing-module__Y0Gm_W__subheading {
+  letter-spacing: .08em;
+  text-transform: none;
+  margin: 8px 0 0;
+  font-family: Sora, sans-serif;
+  font-size: clamp(12px, 1.45vw, 17px);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.VideoEditing-module__Y0Gm_W__enrollButton {
+  color: #0b0b0b;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  background: #00ef02;
+  border-radius: 0;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  min-width: 156px;
+  min-height: 44px;
+  padding: 0 18px;
+  font-family: Avenir Next, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 30px;
+  text-decoration: none;
+  display: inline-flex;
+  position: absolute;
+  bottom: 13px;
+  left: 50%;
+  overflow: hidden;
+  transform: translateX(-50%);
+  box-shadow: 0 10px 24px #00000038;
+}
+
+.VideoEditing-module__Y0Gm_W__enrollButton:after {
+  content: "";
+  filter: blur(3px);
+  opacity: 0;
+  pointer-events: none;
+  background: linear-gradient(#fff0 0%, #ffffff4d 16%, #fff 36% 64%, #ffffff4d 84%, #fff0 100%);
+  border-radius: 999px;
+  width: 8%;
+  height: 260%;
+  position: absolute;
+  top: -118%;
+  left: -10%;
+  transform: rotate(38deg);
+}
+
+.VideoEditing-module__Y0Gm_W__enrollButton:hover:after {
+  animation: .9s ease-out VideoEditing-module__Y0Gm_W__buttonWhiteSweep;
+}
+
+.VideoEditing-module__Y0Gm_W__btnLabel, .VideoEditing-module__Y0Gm_W__btnIcon {
+  z-index: 1;
+  display: block;
+  position: relative;
+}
+
+.VideoEditing-module__Y0Gm_W__btnLabel {
+  white-space: nowrap;
+}
+
+.VideoEditing-module__Y0Gm_W__btnIcon {
+  flex-shrink: 0;
+}
+
+@keyframes VideoEditing-module__Y0Gm_W__buttonWhiteSweep {
+  from {
+    opacity: 0;
+    top: -118%;
+    left: -14%;
+    transform: rotate(38deg);
+  }
+
+  16% {
+    opacity: 1;
+  }
+
+  78% {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    top: -14%;
+    left: 152%;
+    transform: rotate(38deg);
+  }
+}
+
+@media (max-width: 540px) {
+  .VideoEditing-module__Y0Gm_W__section {
+    margin-top: -1px;
+  }
+
+  .VideoEditing-module__Y0Gm_W__videoFrame {
+    aspect-ratio: 9 / 16;
+    height: auto;
+    min-height: 0;
+    max-height: 100dvh;
+  }
+
+  .VideoEditing-module__Y0Gm_W__video {
+    object-fit: contain;
+  }
+
+  .VideoEditing-module__Y0Gm_W__headingWrap {
+    width: min(78%, 300px);
+    top: 8px;
+    left: 6px;
+  }
+
+  .VideoEditing-module__Y0Gm_W__heading {
+    font-size: clamp(19px, 6.1vw, 26px);
+  }
+
+  .VideoEditing-module__Y0Gm_W__subheading {
+    margin-top: 4px;
+    font-size: clamp(11px, 3.4vw, 14px);
+  }
+
+  .VideoEditing-module__Y0Gm_W__enrollButton {
+    min-width: 0;
+    padding-inline: 16px;
+    font-size: 13px;
+    line-height: 24px;
+    bottom: 38px;
+  }
+}
+
+/*# sourceMappingURL=src_components_VideoEditing_module_css_0w3-wzy._.single.css.map*/

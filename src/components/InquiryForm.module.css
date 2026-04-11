@@ -1,0 +1,600 @@
+/* ========== COMPLETE CSS FILE ========== */
+
+/* ========== BASE STYLES ========== */
+.section {
+  width: 100%;
+  padding: 40px 32px;
+  box-sizing: border-box;
+  background: #ffffff;
+}
+
+.shell {
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.08fr 0.92fr;
+  background: rgba(255, 255, 255, 0.86);
+  border: 1px solid rgba(17, 24, 39, 0.08);
+  border-radius: 34px;
+  overflow: visible;
+}
+
+/* ========== VISUAL PANEL ========== */
+.visualPanel {
+  position: relative;
+  padding: 24px 28px 20px;
+  background: #fcfcfc;
+}
+
+.imageFrame {
+  width: min(100%, 360px);
+  aspect-ratio: 1.1 / 0.78;
+  margin: 14px auto 40px;
+  overflow: hidden;
+  border-radius: 24px;
+}
+
+.slideImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: simpleFade 1.8s ease;
+}
+
+.visualCopy {
+  max-width: 420px;
+  margin: 32px auto 0;
+  text-align: center;
+  animation: simpleFadeUp 1.8s ease;
+}
+
+.visualBrand {
+  margin: 0 0 20px;
+  color: #9ca3af;
+  font-family: "Sora", sans-serif;
+  font-size: 0.62rem;
+  font-weight: 500;
+}
+
+.visualLines {
+  color: #111827;
+  font-family: "Sora", sans-serif;
+  font-size: clamp(1rem, 1.45vw, 1.2rem);
+  font-weight: 600;
+  line-height: 1.35;
+  white-space: pre-wrap;
+}
+
+/* ========== FORM PANEL ========== */
+.formPanel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 24px clamp(18px, 4vw, 42px) 32px;
+}
+
+.formIntro {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.formTitle {
+  margin: 0;
+  font-family: "Sora", sans-serif;
+  font-size: clamp(1.45rem, 2.1vw, 1.95rem);
+  font-weight: 600;
+  color: #111827;
+  line-height: 1.2;
+}
+
+.formSubtitle {
+  margin: 8px 0 0;
+  color: #6b7280;
+  font-size: 0.95rem;
+  font-family: "Sora", sans-serif;
+  line-height: 1.5;
+}
+
+.subtitle2 {
+  font-weight: 400;
+  color: #6b7280;
+  display: inline-block;
+}
+
+.subtitle2::after {
+  content: "";
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: rgba(0, 239, 2, 0.2);
+  z-index: -1;
+}
+
+/* ========== FORM ELEMENTS ========== */
+.form {
+  display: grid;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.field {
+  display: flex;
+  align-items: center;
+  min-height: 52px;
+  border: 1px solid #eef1f5;
+  border-radius: 14px;
+  background: #f9fafc;
+  transition: all 0.2s ease;
+}
+
+.field:focus-within, .fieldActive {
+  border-color: #00EF02;
+  box-shadow: 0 0 0 4px rgba(0, 239, 2, 0.1);
+}
+
+.fieldError {
+  border-color: #ef4444 !important;
+  box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.1) !important;
+}
+
+.input {
+  width: 100%;
+  padding: 0 14px;
+  border: 0;
+  background: transparent;
+  outline: none;
+  font-size: 0.84rem;
+}
+
+.input::placeholder {
+  color: #bac0cb;
+  font-weight: 300;
+  opacity: 1;
+}
+
+/* ========== DROPDOWN ========== */
+.dropdownContainer {
+  position: relative;
+  width: 100%;
+}
+
+.customSelect {
+  cursor: pointer;
+  padding: 0 14px;
+  justify-content: space-between;
+}
+
+.placeholder { color: #828a92; font-size: 0.84rem; }
+.selectedText { color: #000; font-size: 0.84rem; }
+
+.arrow {
+  width: 12px;
+  height: 12px;
+  background: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'%3E%3C/path%3E%3C/svg%3E") no-repeat center;
+  transition: transform 0.3s ease;
+}
+
+.arrowUp { transform: rotate(180deg); }
+
+.optionsList {
+  position: absolute;
+  top: 100%; left: 0; right: 0;
+  background: #fff;
+  border: 1px solid #eef1f5;
+  border-radius: 14px;
+  margin-top: 8px;
+  padding: 8px 0;
+  z-index: 100;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  list-style: none;
+}
+
+.optionItem {
+  padding: 12px 16px;
+  font-size: 0.84rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.optionItem:hover {
+  background-color: #00EF02;
+  color: #111827;
+}
+
+.errorText {
+  color: #ef4444;
+  font-size: 0.75rem;
+  margin-top: 4px;
+  font-family: "Sora", sans-serif;
+  display: block;
+}
+
+/* ========== SUBMIT BUTTON ========== */
+.submitButton {
+  min-height: 56px;
+  margin-top: 4px;
+  border: 0;
+  border-radius: 16px;
+  background: #00EF02;
+  color: #111827;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 12px 24px rgba(0, 239, 2, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.2s ease;
+}
+
+.submitButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 32px rgba(0, 239, 2, 0.45);
+}
+
+.btnIcon { width: 22px; height: 22px; flex-shrink: 0; }
+
+/* ========== CONFETTI & OVERLAY ========== */
+.confettiCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 9998;
+  animation: fadeIn 0.3s ease;
+}
+
+/* ========== THANK YOU POPUP ========== */
+.thankYouPopup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  background: white;
+  padding: 42px 36px 34px;
+  border-radius: 22px;
+  text-align: center;
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.3);
+  z-index: 10000;
+  opacity: 0;
+  animation: popupShow 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+  width: 90vw;
+  max-width: 400px;
+  min-width: 300px;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+/* ✅ NAYA: Checkmark Container for SVG */
+.checkmarkContainer {
+  margin: 2px auto 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: checkmarkScale 0.5s ease 0.2s both;
+}
+
+/* ✅ NAYA: Checkmark SVG Styles */
+.checkmarkCircle {
+  position: relative;
+  width: 78px;
+  height: 78px;
+  border-radius: 50%;
+  background: linear-gradient(180deg, #14ef3a 0%, #09d92f 100%);
+  box-shadow: 0 8px 24px rgba(20, 239, 58, 0.28);
+}
+
+.checkmarkStem,
+.checkmarkKick {
+  position: absolute;
+  background: #fff;
+  border-radius: 999px;
+}
+
+.checkmarkStem {
+  width: 7px;
+  height: 18px;
+  left: 28px;
+  top: 34px;
+  transform: rotate(-42deg);
+  transform-origin: center;
+}
+
+.checkmarkKick {
+  width: 7px;
+  height: 32px;
+  left: 43px;
+  top: 22px;
+  transform: rotate(45deg);
+  transform-origin: center;
+}
+
+.thankYouTitle {
+  color: #111827;
+  font-family: "Sora", sans-serif;
+  font-size: 31px;
+  font-weight: 700;
+  margin: 0 0 14px 0;
+  animation: fadeInUp 0.5s ease 0.3s both;
+}
+
+.thankYouText {
+  color: #7d8493;
+  font-family: "Sora", sans-serif;
+  font-size: 15px;
+  line-height: 1.45;
+  margin: 0 0 10px 0;
+  animation: fadeInUp 0.5s ease 0.4s both;
+}
+
+.thankYouSubtext {
+  color: #1dd34f;
+  font-family: "Sora", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0;
+  animation: fadeInUp 0.5s ease 0.5s both;
+}
+
+/* ========== CLOSE BUTTON ========== */
+.closeButton {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: transparent;
+  color: transparent;
+  font-size: 0;
+  font-weight: 400;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  line-height: 1;
+  padding: 0;
+}
+
+.closeButton::before {
+  content: "×";
+  color: #bcc3cf;
+  font-size: 26px;
+  line-height: 1;
+}
+
+.closeButton:hover {
+  background: #f3f4f6;
+  transform: none;
+}
+
+.closeButton:hover::before {
+  color: #8f97a5;
+}
+
+/* ========== FORM HIDDEN ========== */
+.formHidden {
+  opacity: 0;
+  transform: scale(0.95);
+  pointer-events: none;
+  transition: all 0.5s ease;
+}
+
+/* ========== ANIMATIONS ========== */
+@keyframes simpleFade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes simpleFadeUp { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes popupShow {
+  0% { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
+  50% { transform: translate(-50%, -50%) scale(1.05); }
+  100% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
+@keyframes checkmarkScale {
+  0% { transform: scale(0); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ========== DESKTOP ========== */
+@media (min-width: 1041px) {
+ 
+  .imageFrame {
+    width: min(100%, 360px);
+    aspect-ratio: 1.1 / 0.78;
+    margin: 14px auto 40px;
+  }
+}
+
+/* ========== TABLET & MOBILE ========== */
+@media (max-width: 1040px) {
+  .shell { grid-template-columns: 1fr; }
+
+  .visualPanel {
+    height: auto;
+    display: grid;
+    grid-template-rows: 200px auto;
+    gap: 15px;
+    padding: 20px 20px 25px;
+    align-items: start;
+  }
+
+  .imageFrame {
+    width: 100%;
+    max-width: 320px;
+    height: 200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .slideImage {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+  }
+
+  .visualCopy {
+    max-width: 100%;
+    margin: 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: 100px;
+  }
+
+  .visualBrand {
+    margin: 0 0 8px;
+    font-size: 0.6rem;
+  }
+
+  .visualLines {
+    line-height: 1.3;
+    margin: 0;
+    font-size: clamp(0.9rem, 3vw, 1.1rem);
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+}
+
+/* ========== POPUP CENTER FIX ========== */
+@media (max-width: 768px) {
+  .thankYouPopup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    right: auto;
+    bottom: auto;
+    transform: translate(-50%, -50%) scale(0.8);
+    width: 85vw;
+    max-width: 350px;
+    min-width: 280px;
+    padding: 40px 30px;
+    margin: 0;
+  }
+}
+
+/* ========== SMALL MOBILE ========== */
+@media (max-width: 520px) {
+  .section { padding: 20px 12px; }
+  .submitButton { font-size: 18px; }
+
+  .thankYouPopup {
+    width: 90vw;
+    max-width: 320px;
+    min-width: 260px;
+    padding: 35px 25px;
+  }
+
+  .thankYouTitle { font-size: 24px; }
+  .thankYouText { font-size: 14px; }
+  .thankYouSubtext { font-size: 13px; }
+
+  /* ✅ Updated checkmark sizes for mobile */
+  .checkmarkCircle {
+    width: 60px;
+    height: 60px;
+  }
+
+  .checkmarkStem {
+    width: 6px;
+    height: 16px;
+    left: 21px;
+    top: 26px;
+  }
+
+  .checkmarkKick {
+    width: 6px;
+    height: 28px;
+    left: 33px;
+    top: 17px;
+  }
+
+  .checkmarkContainer {
+    margin-bottom: 15px;
+  }
+
+  .closeButton {
+    top: 10px;
+    right: 12px;
+    width: 28px;
+    height: 28px;
+    font-size: 24px;
+  }
+}
+
+/* ========== EXTRA SMALL ========== */
+@media (max-width: 480px) {
+  .visualPanel {
+    grid-template-rows: 180px auto;
+    gap: 12px;
+    padding: 15px 15px 20px;
+  }
+
+  .imageFrame {
+    max-width: 280px;
+    height: 180px;
+  }
+
+  .visualCopy { min-height: 90px; }
+
+  .visualLines {
+    font-size: 0.85rem;
+    min-height: 70px;
+  }
+}
+
+@media (max-width: 360px) {
+  .thankYouPopup {
+    width: 92vw;
+    max-width: 300px;
+    padding: 30px 20px;
+  }
+
+  .thankYouTitle { font-size: 22px; }
+  
+  /* ✅ Smaller checkmark for very small screens */
+  .checkmarkCircle {
+    width: 50px;
+    height: 50px;
+  }
+
+  .checkmarkStem {
+    left: 17px;
+    top: 21px;
+    height: 14px;
+  }
+
+  .checkmarkKick {
+    left: 28px;
+    top: 14px;
+    height: 24px;
+  }
+}

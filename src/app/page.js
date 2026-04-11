@@ -1,66 +1,91 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import HomePage from "./HomePage";
 
-export default function Home() {
+const siteUrl = "https://imazineus.com";
+const pageUrl = `${siteUrl}/`;
+const title =
+  "Imazine Us Academy | Graphic Design, Video Editing and Offline Classes";
+const description =
+  "Join Imazine Us Academy for offline graphic design, Photoshop, Illustrator, InDesign and creative training classes in Zirakpur.";
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "EducationalOrganization",
+      "@id": `${siteUrl}/#organization`,
+      name: "Imazine Us Academy",
+      url: siteUrl,
+      logo: {
+        "@type": "ImageObject",
+        url: `${siteUrl}/ImazineUsAcademyLogo.png`,
+      },
+      description,
+      sameAs: [
+        "https://www.instagram.com/imazineusacademy/",
+        "https://www.facebook.com/Imazine.Us.Academy",
+      ],
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Zirakpur",
+        addressCountry: "IN",
+      },
+    },
+    {
+      "@type": "WebPage",
+      "@id": `${pageUrl}#webpage`,
+      url: pageUrl,
+      name: title,
+      description,
+      inLanguage: "en-IN",
+      isPartOf: {
+        "@id": `${siteUrl}/#organization`,
+      },
+    },
+    {
+      "@type": "Course",
+      "@id": `${siteUrl}/graphic-design-course`,
+      name: "Graphic Designing Course",
+      description:
+        "Offline graphic designing course covering Photoshop, Illustrator, InDesign, typography, branding, social media design and portfolio building.",
+      provider: {
+        "@type": "EducationalOrganization",
+        "@id": `${siteUrl}/#organization`,
+      },
+      educationalCredentialAwarded: "Certificate",
+    },
+  ],
+};
+
+export const metadata = {
+  title,
+  description,
+  alternates: {
+    canonical: pageUrl,
+  },
+  openGraph: {
+    type: "website",
+    url: pageUrl,
+    title,
+    description,
+    images: [`${siteUrl}/ImazineUsAcademyLogo.png`],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+  },
+};
+
+export default function Page() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.js file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(structuredData).replace(/</g, "\\u003c"),
+        }}
+      />
+      <HomePage />
+    </>
   );
 }
