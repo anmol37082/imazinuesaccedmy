@@ -15,6 +15,7 @@ function HomeBanner3() {
           alt="Imazine Us Academy home banner"
           width={1600}
           height={900}
+          loading="eager"
           sizes="100vw"
         />
       </picture>

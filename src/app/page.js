@@ -67,12 +67,20 @@ export const metadata = {
     url: pageUrl,
     title,
     description,
-    images: [`${siteUrl}/ImazineUsAcademyLogo.png`],
+    images: [
+      {
+        url: `${siteUrl}/ImazineUsAcademyLogo.png`,
+        width: 512,
+        height: 512,
+        alt: "Imazine Us Academy logo",
+      },
+    ],
   },
   twitter: {
-    card: "summary_large_image",
+    card: "summary",
     title,
     description,
+    images: [`${siteUrl}/ImazineUsAcademyLogo.png`],
   },
 };
 

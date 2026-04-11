@@ -59,7 +59,7 @@
 .enrollButton {
   position: absolute;
   left: 50%;
-  bottom: 13px;
+  bottom: 60px;
   transform: translateX(-50%);
   display: inline-flex;
   align-items: center;
