@@ -49,8 +49,8 @@
 .subheading {
   margin: 8px 0 0;
   font-family: "Sora", sans-serif;
-  font-size: clamp(12px, 1.45vw, 17px);
-  font-weight: 600;
+  font-size: clamp(13px, 1.6vw, 19px);
+  font-weight: 400;
   line-height: 1.2;
   letter-spacing: 0.08em;
   text-transform: none;
@@ -177,7 +177,7 @@
 
   .subheading {
     margin-top: 4px;
-    font-size: clamp(11px, 3.4vw, 14px);
+    font-size: clamp(12px, 3.8vw, 15px);
   }
 
   .enrollButton {
