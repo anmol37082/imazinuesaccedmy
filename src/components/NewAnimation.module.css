@@ -1,13 +1,12 @@
 
 
 .newAnimation {
-  --stage-offset: clamp(28px, 5vh, 56px);
   position: relative;
   display: block;
   width: 100vw;
   max-width: none;
-  height: 210svh;
-  min-height: 1320px;
+  height: auto;
+  min-height: 0;
   background: #000000;
   margin: 0 calc(50% - 50vw);
   overflow: clip;
@@ -33,9 +32,8 @@
 }
 
 .newAnimationStage {
-  position: sticky;
-  top: var(--stage-offset);
-  height: calc(100svh - var(--stage-offset));
+  position: relative;
+  height: clamp(760px, 118svh, 1180px);
   overflow: hidden;
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
@@ -141,8 +139,8 @@
 
 @media (max-width: 768px) {
   .newAnimation {
-    height: 138svh;
-    min-height: 760px;
+    height: auto;
+    min-height: 0;
   }
 
   .newAnimationStage {
@@ -203,7 +201,7 @@
 
 
 @supports (-webkit-touch-callout: none) {
-  .newAnimation { height: 200svh; min-height: 1200px; }
+  .newAnimation { height: auto; min-height: 0; }
   .newAnimImage, .textImage { 
     transition: none !important; 
     animation: none !important;
@@ -213,8 +211,8 @@
 
 @supports (-webkit-touch-callout: none) and (max-width: 768px) {
   .newAnimation {
-    height: 132svh;
-    min-height: 720px;
+    height: auto;
+    min-height: 0;
   }
 }
 

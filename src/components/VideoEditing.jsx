@@ -19,12 +19,18 @@ function VideoEditing() {
 
   return (
     <section className={styles.section}>
-      <div className={styles.videoFrame}>
+      <div className={styles.headingContainer}>
         <div className={styles.headingWrap}>
-          <h2 className={styles.heading}>DOCUMENTARY STYLE VIDEO EDITING</h2>
+          <h2 className={styles.heading}>
+            DOCUMENTARY STYLE
+            <br />
+            VIDEO EDITING
+          </h2>
           <p className={styles.subheading}>and filmmaking course</p>
         </div>
+      </div>
 
+      <div className={styles.videoFrame}>
         <video
           className={styles.video}
           autoPlay
