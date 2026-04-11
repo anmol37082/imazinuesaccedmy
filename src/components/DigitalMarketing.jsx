@@ -8,9 +8,15 @@ import useMediaQuery from "@/hooks/useMediaQuery";
 function DigitalMarketing() {
   const isMobileViewport = useMediaQuery("(max-width: 540px)");
 
-  const videoSource = isMobileViewport
-    ? "/video/digital%20marketing%20mobile%20view.mp4"
-    : "/video/digital%20marketing.mp4";
+  const videoSources = isMobileViewport
+    ? {
+        webm: "/video/digital%20marketing%20mobile%20view.webm",
+        mp4: "/video/digital%20marketing%20mobile%20view.mp4",
+      }
+    : {
+        webm: "/video/digital%20marketing.webm",
+        mp4: "/video/digital%20marketing.mp4",
+      };
 
   return (
     <section className={styles.section}>
@@ -22,9 +28,10 @@ function DigitalMarketing() {
           loop
           playsInline
           preload="metadata"
-          key={videoSource}
+          key={`${videoSources.webm}-${videoSources.mp4}`}
         >
-          <source src={videoSource} type="video/mp4" />
+          <source src={videoSources.webm} type="video/webm" />
+          <source src={videoSources.mp4} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
 
