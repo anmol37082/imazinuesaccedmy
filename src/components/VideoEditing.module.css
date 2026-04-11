@@ -1,3 +1,10 @@
+@font-face {
+  font-family: "DIN Condensed Bold";
+  src: url("../assets/fonts/DIN Condensed Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
 .section {
   width: 100%;
   padding: 0;
@@ -39,19 +46,19 @@
 
 .heading {
   margin: 0;
-  font-family: "Avenir Next", sans-serif;
+  font-family: "DIN Condensed Bold", "Avenir Next", sans-serif;
   font-size: clamp(34px, 5.8vw, 84px);
   font-weight: 700;
   line-height: 1.05;
-  letter-spacing: -0.05em;
+  letter-spacing: 0.01em;
   text-transform: uppercase;
 }
 
 .subheading {
   margin: 14px 0 0;
   font-family: "Avenir Next", sans-serif;
-  font-size: clamp(18px, 2.2vw, 30px);
-  font-weight: 700;
+  font-size: clamp(14px, 1.55vw, 20px);
+  font-weight: 400;
   line-height: 1.2;
   letter-spacing: 0.08em;
   text-transform: none;
@@ -180,7 +187,7 @@
 
   .subheading {
     margin-top: 10px;
-    font-size: clamp(15px, 4.6vw, 19px);
+    font-size: clamp(12px, 3.5vw, 15px);
   }
 
   .enrollButton {

@@ -22,11 +22,11 @@ function VideoEditing() {
       <div className={styles.headingContainer}>
         <div className={styles.headingWrap}>
           <h2 className={styles.heading}>
-            DOCUMENTARY STYLE
+            DOCUMENTARY
             <br />
-            VIDEO EDITING
+            STYLE VIDEO EDITING
           </h2>
-          <p className={styles.subheading}>and filmmaking course</p>
+          <p className={styles.subheading}>& filmmaking course</p>
         </div>
       </div>
 

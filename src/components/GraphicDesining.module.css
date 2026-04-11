@@ -1,6 +1,7 @@
 .section {
   width: 100%;
   padding: 0;
+  margin: 0;
   box-sizing: border-box;
   background: #000000;
   line-height: 0;
@@ -118,22 +119,23 @@
 
 @media (max-width: 540px) {
   .section {
-    margin-top: -1px;
+    margin-top: 0;
   }
 
   .videoFrame {
     height: auto;
     min-height: 0;
-    aspect-ratio: 9 / 16;
-    max-height: 100dvh;
+    aspect-ratio: auto;
+    max-height: none;
   }
 
   .video {
+    height: auto;
     object-fit: contain;
   }
 
   .enrollButton {
-    bottom: 38px;
+    bottom: 24px;
     min-width: 0;
     padding-inline: 16px;
     font-size: 13px;
