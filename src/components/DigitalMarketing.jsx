@@ -34,7 +34,9 @@ function DigitalMarketing() {
           <source src={videoSources.mp4} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
+      </div>
 
+      <div className={styles.buttonContainer}>
         <Link href="#inquiry" className={styles.enrollButton}>
           <span className={styles.btnLabel}>ENROLL NOW</span>
           <svg

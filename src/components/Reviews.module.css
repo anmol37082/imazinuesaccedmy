@@ -1,6 +1,7 @@
 .section {
   position: relative;
   width: 100%;
+  margin-top: -2px;
   padding: 44px 28px 32px;
   background: #ffffff;
   box-sizing: border-box;

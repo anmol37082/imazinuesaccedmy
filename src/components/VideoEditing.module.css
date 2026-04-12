@@ -67,7 +67,7 @@
 .enrollButton {
   position: absolute;
   left: 50%;
-  bottom: 60px;
+  bottom: 50px;
   transform: translateX(-50%);
   display: inline-flex;
   align-items: center;
@@ -87,7 +87,6 @@
   letter-spacing: 1px;
   text-decoration: none;
   text-transform: uppercase;
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
   overflow: hidden;
 }
 
@@ -191,7 +190,7 @@
   }
 
   .enrollButton {
-    bottom: 38px;
+    bottom: 28px;
     min-width: 0;
     padding-inline: 16px;
     font-size: 13px;
