@@ -8,7 +8,6 @@
 }
 
 .videoFrame {
-  position: relative;
   width: 100%;
   height: clamp(320px, 56.25vw, 100dvh);
   margin: 0;
@@ -24,11 +23,17 @@
   object-fit: cover;
 }
 
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 18px 16px 22px;
+  background: #000000;
+  line-height: normal;
+}
+
 .enrollButton {
-  position: absolute;
-  left: 50%;
-  bottom: 3px;
-  transform: translateX(-50%);
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -119,22 +124,27 @@
 @media (max-width: 540px) {
   .section {
     margin-top: 0;
+    background: #000000;
   }
 
   .videoFrame {
-    height: auto;
-    min-height: 0;
+    height: 430px;
+    min-height: 430px;
     aspect-ratio: auto;
-    max-height: none;
+    max-height: 430px;
   }
 
   .video {
-    height: auto;
-    object-fit: contain;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .buttonContainer {
+    padding: 10px 12px 14px;
   }
 
   .enrollButton {
-    bottom: 14px;
     min-width: 0;
     padding-inline: 16px;
     font-size: 13px;
