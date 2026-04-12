@@ -27,9 +27,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 18px 16px 22px;
+  padding: 0px 16px 12px;
   background: #000000;
   line-height: normal;
+      margin-top: -40px;
 }
 
 .enrollButton {
@@ -52,6 +53,7 @@
   letter-spacing: 1px;
   text-decoration: none;
   text-transform: uppercase;
+  margin-bottom: 10px;
   overflow: hidden;
 }
 
@@ -141,7 +143,7 @@
   }
 
   .buttonContainer {
-    padding: 10px 12px 14px;
+    padding: 6px 12px 10px;
   }
 
   .enrollButton {
@@ -149,5 +151,6 @@
     padding-inline: 16px;
     font-size: 13px;
     line-height: 24px;
+    margin-bottom: 12px;
   }
 }
