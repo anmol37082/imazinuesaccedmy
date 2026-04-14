@@ -188,9 +188,8 @@ function NewAnimation() {
              CREATIVE
           </h1>
           <p className={styles.mobileBannerSubtitle}>
-            Let&apos;s find out how strategy,  <br /> powerful learning &amp;
-           
-            creative minds can Change Yooouu.....
+            Best Graphics &amp; Video Editing Institute in Chandigarh |
+            Panchkula | Mohali
           </p>
         </div>
       </section>
@@ -208,18 +207,23 @@ function NewAnimation() {
               isTextLoaded ? styles.textImageLoaded : ""
             }`}
           >
-            <Image
-              src="/newanimation/text.png"
-              alt="Text Overlay"
-              className={styles.textImage}
+            <div
+              className={styles.desktopBannerText}
               style={{
                 transform: `translateX(-50%) translateY(${transforms[7]}px)`,
               }}
-              width={1200}
-              height={420}
-              sizes="90vw"
-              priority
-            />
+            >
+              <p className={styles.desktopBannerTag}>Design Academy</p>
+              <h1 className={styles.desktopBannerTitle}>
+                LET&apos;S DESIGN
+                <br />
+                SOMETHING CREATIVE
+              </h1>
+              <p className={styles.desktopBannerSubtitle}>
+                Best Graphics &amp; Video Editing Institute in Chandigarh |
+                Panchkula | Mohali
+              </p>
+            </div>
           </div>
 
           {imageConfigs.map((image, index) => (
