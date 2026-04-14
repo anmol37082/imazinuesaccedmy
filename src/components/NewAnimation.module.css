@@ -228,7 +228,7 @@
   }
 
   .mobileBannerContent {
-    inset: clamp(52px, 14vw, 84px) clamp(12px, 4vw, 18px) auto;
+    inset: clamp(78px, 20vw, 118px) clamp(12px, 4vw, 18px) auto;
   }
 
   .mobileBannerTag {
@@ -248,7 +248,7 @@
 
 @media (max-width: 400px) {
   .mobileBannerContent {
-    inset: clamp(44px, 16vw, 62px) 12px auto;
+    inset: clamp(72px, 22vw, 108px) 12px auto;
   }
 
   .mobileBannerTitle {
