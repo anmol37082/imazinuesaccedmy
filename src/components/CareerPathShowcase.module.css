@@ -223,6 +223,7 @@
 .select,
 .phoneInput {
   width: 100%;
+  min-width: 0;
   border: 0;
   background: transparent;
   color: #1f2937;
@@ -382,10 +383,16 @@
   .courseCard {
     flex-basis: auto;
     border-radius: 18px;
+    box-shadow: 0 10px 20px rgba(15, 23, 42, 0.05);
+    contain: layout paint;
   }
 
   .cardVisual {
     min-height: 220px;
+  }
+
+  .visualGlow {
+    display: none;
   }
 
   .cardBody {
@@ -428,6 +435,12 @@
   .selectField,
   .phoneField {
     min-height: 54px;
+  }
+
+  .select,
+  .phoneInput,
+  .countryCode {
+    font-size: 16px;
   }
 
   .submitButton {

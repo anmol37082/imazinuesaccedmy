@@ -219,12 +219,12 @@
 
 @media (max-width: 540px) {
   .mobileBannerSection {
-    min-height: auto;
-    aspect-ratio: 9 / 16;
+    min-height: 100dvh;
+    aspect-ratio: auto;
   }
 
   .mobileBannerImage {
-    min-height: auto;
+    min-height: 100dvh;
     height: 100%;
   }
 

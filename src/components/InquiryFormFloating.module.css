@@ -202,6 +202,7 @@
 .select,
 .phoneInput {
   width: 100%;
+  min-width: 0;
   border: 0;
   background: transparent;
   color: #1f2937;
@@ -356,7 +357,7 @@
 @media (max-width: 720px) {
   .floatingBar {
     bottom: 0;
-    width: calc(100vw - 12px);
+    width: calc(100vw - 0px);
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
@@ -379,9 +380,10 @@
   .floatingButton {
     min-height: 40px;
     flex-basis: auto;
-    width: 100%;
+    width: 95%;
+    margin-left: 9px;
     border-radius: 8px;
-    background: #26469c;
+    background: #00EF02;
     color: #ffffff;
     font-size: 0.82rem;
     font-weight: 700;
@@ -401,7 +403,7 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
+    width: 95%;
     border: 1px solid #26469c;
     border-radius: 8px;
     background: #ffffff;
@@ -456,6 +458,12 @@
   .phoneInput,
   .consent {
     font-size: 0.92rem;
+  }
+
+  .countryCode,
+  .select,
+  .phoneInput {
+    font-size: 16px;
   }
 
   .submitButton {
