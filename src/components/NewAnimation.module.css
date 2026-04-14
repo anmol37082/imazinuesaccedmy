@@ -241,7 +241,7 @@
 
   .mobileBannerSubtitle {
     max-width: min(80vw, 260px);
-    margin-top: clamp(20px, 5.8vw, 30px);
+    margin-top: clamp(28px, 7.6vw, 40px);
     font-size: clamp(0.81rem, 3.45vw, 1rem);
   }
 }
@@ -261,7 +261,7 @@
 
   .mobileBannerSubtitle {
     max-width: 84vw;
-    margin-top: clamp(22px, 6.5vw, 32px);
+    margin-top: clamp(30px, 8vw, 42px);
     font-size: clamp(0.76rem, 3.65vw, 0.94rem);
   }
 
