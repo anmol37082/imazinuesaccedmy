@@ -230,7 +230,7 @@
 
   .mobileBannerContent {
     inset: clamp(112px, 26vw, 156px) clamp(12px, 4vw, 18px) auto;
-    transform: translateY(clamp(-46px, calc((100vw - 570px) * 0.26), 0px));
+    transform: translateY(clamp(-38px, calc((100vw - 570px) * 0.22), 0px));
   }
 
   .mobileBannerTag {
@@ -251,7 +251,7 @@
 @media (max-width: 400px) {
   .mobileBannerContent {
     inset: clamp(104px, 28vw, 144px) 12px auto;
-    transform: translateY(clamp(-52px, calc((100vw - 570px) * 0.28), -16px));
+    transform: translateY(clamp(-44px, calc((100vw - 570px) * 0.24), -12px));
   }
 
   .mobileBannerTag {
