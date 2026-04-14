@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import useMediaQuery from "@/hooks/useMediaQuery";
 import styles from "./NewAnimation.module.css";
 
-const mobileBannerImage = "/homepagemobileviewbanner2.webp";
+const mobileBannerImage = "/homepagemobileviewbanner3.webp";
 
 const imageConfigs = [
   {
