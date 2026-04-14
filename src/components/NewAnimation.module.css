@@ -44,6 +44,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
   text-align: center;
   color: #f8f2e8;
   pointer-events: none;
@@ -51,9 +52,14 @@
 }
 
 .mobileBannerTag {
-  margin: 0 0 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 12px;
+  min-height: clamp(34px, 7vw, 44px);
   padding: clamp(5px, 1.5vw, 8px) clamp(10px, 3.2vw, 16px);
   border: 1px solid rgba(23, 131, 58, 0.45);
+  border-radius: 999px;
   background: rgba(9, 27, 12, 0.28);
   color: #1f9a3d;
   font-family: "DIN Condensed Bold", "Avenir Next", sans-serif;
@@ -75,7 +81,7 @@
 
 .mobileBannerSubtitle {
   max-width: min(78vw, 292px);
-  margin: clamp(10px, 2.8vw, 14px) 0 0;
+  margin: clamp(14px, 4.4vw, 22px) 0 0;
   color: #f1e6d9;
   font-family: "DIN Condensed Bold", "Avenir Next", sans-serif;
   font-size: clamp(0.98rem, 4vw, 1.5rem);
@@ -227,7 +233,7 @@
   }
 
   .mobileBannerTag {
-    margin-bottom: 8px;
+    margin-bottom: 10px;
   }
 
   .mobileBannerTitle {
@@ -236,12 +242,13 @@
 
   .mobileBannerSubtitle {
     max-width: min(80vw, 260px);
+    margin-top: clamp(18px, 5vw, 26px);
   }
 }
 
 @media (max-width: 400px) {
   .mobileBannerContent {
-    inset: clamp(48px, 17vw, 70px) 12px auto;
+    inset: clamp(46px, 17vw, 68px) 12px auto;
   }
 
   .mobileBannerTitle {
@@ -250,6 +257,7 @@
 
   .mobileBannerSubtitle {
     max-width: 84vw;
+    margin-top: clamp(20px, 6vw, 30px);
     font-size: clamp(0.88rem, 3.8vw, 1rem);
   }
 
