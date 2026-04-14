@@ -81,7 +81,7 @@
 
 .mobileBannerSubtitle {
   max-width: min(78vw, 292px);
-  margin: clamp(18px, 5vw, 28px) 0 0;
+  margin: clamp(12px, 3.4vw, 18px) 0 0;
   color: #f1e6d9;
   font-family: "DIN Condensed Bold", "Avenir Next", sans-serif;
   font-size: clamp(0.86rem, 3.4vw, 1.16rem);
