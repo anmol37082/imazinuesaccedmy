@@ -1,3 +1,4 @@
+import CareerPathShowcase from "@/components/CareerPathShowcase";
 import DigitalMarketing from "@/components/DigitalMarketing";
 import Footer from "@/components/Footer";
 import GraphicDesining from "@/components/GraphicDesining";
@@ -22,6 +23,7 @@ function HomePage() {
         <HomeBanner3 />
         <VideoEditing />
         <DigitalMarketing />
+        <CareerPathShowcase />
         <Reviews />
         <InquiryForm />
       </main>

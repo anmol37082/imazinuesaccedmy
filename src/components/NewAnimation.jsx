@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import useMediaQuery from "@/hooks/useMediaQuery";
 import styles from "./NewAnimation.module.css";
 
-const mobileBannerImage = "/homepagemobileviewbanner.webp";
+const mobileBannerImage = "/homepagemobileviewbanner1.webp";
 
 const imageConfigs = [
   {
@@ -176,6 +176,23 @@ function NewAnimation() {
           sizes="100vw"
           priority
         />
+        <div className={styles.mobileBannerContent}>
+          <p className={styles.mobileBannerTag}>Design Academy</p>
+          <h1 className={styles.mobileBannerTitle}>
+            LET&apos;S
+            <br />
+             DESIGN
+            <br />
+            SOMETHING
+            <br />
+             CREATIVE
+          </h1>
+          <p className={styles.mobileBannerSubtitle}>
+            Let&apos;s find out how strategy,  <br /> powerful learning &amp;
+           
+            creative minds can Change Yooouu.....
+          </p>
+        </div>
       </section>
     );
   }
