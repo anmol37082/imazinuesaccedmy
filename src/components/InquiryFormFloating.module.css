@@ -415,26 +415,26 @@
   }
 
   .modal {
-    width: calc(100vw - 16px);
-    border-radius: 20px;
+    width: min(92vw, 360px);
+    border-radius: 16px;
   }
 
   .modalVisual {
-    min-height: 132px;
+    min-height: 108px;
   }
 
   .visualBackdrop {
     inset: 50% 28px auto 28px;
-    height: 96px;
+    height: 82px;
   }
 
   .modalContent {
-    padding: 14px 22px 28px;
+    padding: 12px 18px 20px;
     min-height: 0;
   }
 
   .closeButton {
-    top: -120px;
+    top: -98px;
     right: 16px;
     width: 32px;
     height: 32px;
@@ -443,14 +443,14 @@
   }
 
   .modalTitle {
-    margin-top: 4px;
-    margin-bottom: 16px;
-    font-size: 1.9rem;
+    margin-top: 2px;
+    margin-bottom: 12px;
+    font-size: 1.55rem;
   }
 
   .selectField,
   .phoneField {
-    min-height: 58px;
+    min-height: 52px;
   }
 
   .countryCode,
@@ -467,7 +467,7 @@
   }
 
   .submitButton {
-    min-height: 68px;
-    font-size: 1.4rem;
+    min-height: 58px;
+    font-size: 1.2rem;
   }
 }
