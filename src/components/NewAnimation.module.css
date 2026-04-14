@@ -39,7 +39,7 @@
 
 .mobileBannerContent {
   position: absolute;
-  inset: clamp(76px, 13vw, 124px) clamp(14px, 4.6vw, 22px) auto;
+  inset: clamp(92px, 16vw, 144px) clamp(14px, 4.6vw, 22px) auto;
   z-index: 2;
   display: flex;
   flex-direction: column;
@@ -228,7 +228,7 @@
   }
 
   .mobileBannerContent {
-    inset: clamp(78px, 20vw, 118px) clamp(12px, 4vw, 18px) auto;
+    inset: clamp(96px, 24vw, 138px) clamp(12px, 4vw, 18px) auto;
   }
 
   .mobileBannerTag {
@@ -248,7 +248,7 @@
 
 @media (max-width: 400px) {
   .mobileBannerContent {
-    inset: clamp(72px, 22vw, 108px) 12px auto;
+    inset: clamp(90px, 26vw, 132px) 12px auto;
   }
 
   .mobileBannerTag {
