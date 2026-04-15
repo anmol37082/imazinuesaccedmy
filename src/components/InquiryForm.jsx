@@ -305,13 +305,18 @@ function InquiryForm() {
               &#10003;
             </div>
 
+            <p className={styles.successBadge}>Enquiry Received</p>
+
             <h2 className={styles.successTitle} id="success-title">
               Thank You!
             </h2>
             <p className={styles.successText}>
-              Your enquiry has been submitted successfully.
+              Your enquiry has been submitted successfully. Our counselling team
+              will review it and call you shortly.
             </p>
-            <p className={styles.successHighlight}>We will contact you soon!</p>
+            <p className={styles.successHighlight}>
+              Keep your phone nearby for the next step.
+            </p>
           </div>
         </>
       )}

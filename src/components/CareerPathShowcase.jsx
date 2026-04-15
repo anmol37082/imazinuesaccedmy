@@ -16,39 +16,39 @@ const courseOptions = [
 
 const courses = [
   {
-    title: "Advanced Graphic Designing Course with Brand Identity Specialisation",
+    title: "Creative Graphic Design Specialization with Industry-Standard Visual Tools",
     tag: "Offline + Online",
     highlights: [
-      "4-6 Months Practical Program",
-      "100% Portfolio Development Assistance",
-      "Logo, Packaging and Social Media Design Projects",
-      "Preferred By: Freshers, Students and Freelancers",
+      "Professional Tool Mastery",
+      "Visual Communication",
+      "Commercial Design Projects",
+      "Creative Portfolio Building",
     ],
-    deadline: "Application Deadline: April 19, 2026",
+    deadline: "Hurry up! last date to apply",
     accent: "linear-gradient(135deg, #0b1220 0%, #1e3a8a 100%)",
   },
   {
-    title: "Professional Video Editing Course with Content Creation Specialisation",
+    title: "Next-Gen Video Editing with AI-Driven Documentary & Cinematic Specialisation",
     tag: "Live + Offline",
     highlights: [
-      "4-6 Months Practical Program",
-      "100% Editing Workflow Assistance",
-      "Reels, Ads and Documentary Style Editing Practice",
-      "Preferred By: Content Creators, Students and Editors",
+      "1-3 Months Practical Training",
+      "Industry-Standard Software",
+      "Documentary & Cinematic Mastery",
+      "Advanced AI & Technical Tools",
     ],
-    deadline: "Application Deadline: April 21, 2026",
+    deadline: "Hurry up! last date to apply",
     accent: "linear-gradient(135deg, #111827 0%, #0f766e 100%)",
   },
   {
-    title: "Online Digital Marketing Course with Generative AI Specialisation",
+    title: "Strategic Digital Marketing with AI-Powered Growth & ROI Mastery ",
     tag: "Live + Online",
     highlights: [
-      "4-6 Months Online Program",
-      "100% Career Growth Assistance",
-      "Optional 2-Week Campus Immersion with Industry Visit",
-      "Preferred By: College Students, Working Professionals (3+ Years of Work Ex)",
+      "Performance Marketing & Ads",
+      "SEO & Content Strategy",
+      "Data Analytics & Insights",
+      "Social Media Management",
     ],
-    deadline: "Application Deadline: April 17, 2026",
+    deadline: "Hurry up! last date to apply",
     accent: "linear-gradient(135deg, #166534 0%, #00a63e 100%)",
   },
 ];
@@ -307,13 +307,18 @@ function CareerPathShowcase() {
               &#10003;
             </div>
 
+            <p className={styles.successBadge}>Enquiry Received</p>
+
             <h2 className={styles.successTitle} id="career-success-title">
               Thank You!
             </h2>
             <p className={styles.successText}>
-              Your enquiry has been submitted successfully.
+              Your enquiry has been submitted successfully. Our counselling team
+              will review it and call you shortly.
             </p>
-            <p className={styles.successHighlight}>We will contact you soon!</p>
+            <p className={styles.successHighlight}>
+              Keep your phone nearby for the next step.
+            </p>
           </div>
         </>
       )}

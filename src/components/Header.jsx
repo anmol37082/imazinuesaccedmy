@@ -51,13 +51,13 @@ function HoverText({ label }) {
 
     intervalRef.current = window.setInterval(() => {
       setDisplayLabel(scrambleLabel(label));
-    }, 90);
+    }, 72);
 
     timeoutRef.current = window.setTimeout(() => {
       window.clearInterval(intervalRef.current);
       intervalRef.current = null;
       setDisplayLabel(label);
-    }, 1400);
+    }, 1080);
   };
 
   const handleMouseLeave = () => {

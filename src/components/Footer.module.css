@@ -24,7 +24,7 @@
   display: flex;
   flex-direction: column;
   min-height: 340px;
-  padding: 52px 38px 42px;
+  padding: 72px 38px 42px;
   border-right: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -35,10 +35,11 @@
 .heading {
   margin: 0;
   color: #ffffff;
-  font-family: "Sora", sans-serif;
-  font-size: 1.05rem;
-  font-weight: 700;
-  letter-spacing: -0.01em;
+  font-family: var(--font-sans);
+  font-size: 0.98rem;
+  font-weight: 400;
+  letter-spacing: 0.035em;
+  text-transform: uppercase;
 }
 
 .heading + .text,
@@ -49,10 +50,12 @@
 
 .text {
   margin: 0;
-  color: rgba(255, 255, 255, 0.88);
-  font-family: "Sora", sans-serif;
-  font-size: 1rem;
-  line-height: 1.72;
+  color: rgba(255, 255, 255, 0.74);
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  font-weight: 200;
+  line-height: 1.82;
+  letter-spacing: 0.02em;
 }
 
 .list {
@@ -65,16 +68,19 @@
 }
 
 .link {
-  color: rgba(255, 255, 255, 0.88);
+  color: rgba(255, 255, 255, 0.76);
   text-decoration: none;
-  font-family: "Sora", sans-serif;
-  font-size: 0.96rem;
-  line-height: 1.78;
-  transition: color 0.3s ease;
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  font-weight: 300;
+  line-height: 1.86;
+  letter-spacing: 0.025em;
+  transition: color 0.3s ease, letter-spacing 0.3s ease;
 }
 
 .link:hover {
   color: #00ef02;
+  letter-spacing: 0.03em;
 }
 
 .socialLinks {
@@ -170,9 +176,11 @@
 
 .whatsappHelp,
 .whatsappText {
-  font-family: "Sora", sans-serif;
+  font-family: var(--font-sans);
   font-size: 0.82rem;
-  font-weight: 600;
+  font-weight: 400;
+  letter-spacing: 0.055em;
+  text-transform: uppercase;
 }
 
 .whatsappIcon {
@@ -202,24 +210,29 @@
 
 .copyright {
   margin: 0;
-  color: #ffffff;
-  font-family: "Sora", sans-serif;
-  font-size: 0.95rem;
-  font-weight: 500;
+  color: rgba(255, 255, 255, 0.72);
+  font-family: var(--font-sans);
+  font-size: 0.86rem;
+  font-weight: 200;
+  letter-spacing: 0.03em;
 }
 
 .cta {
   margin: 0;
-  color: rgba(255, 255, 255, 0.7);
-  font-family: "Sora", sans-serif;
-  font-size: 0.9rem;
-  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.62);
+  font-family: var(--font-sans);
+  font-size: 0.84rem;
+  font-weight: 200;
+  line-height: 1.7;
+  letter-spacing: 0.03em;
 }
 
 .ctaLink {
   color: #00ef02;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 400;
+  letter-spacing: 0.055em;
+  text-transform: uppercase;
   transition: color 0.3s ease;
 }
 
@@ -241,7 +254,7 @@
 
   .section {
     min-height: 0;
-    padding: 28px 18px;
+    padding: 40px 18px 28px;
     border-right: 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
@@ -251,7 +264,7 @@
   }
 
   .heading {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
   }
 
   .bottom {
@@ -269,18 +282,18 @@
   }
 
   .heading {
-    font-size: 0.9rem;
+    font-size: 0.84rem;
   }
 
   .text,
   .link,
   .copyright,
   .cta {
-    font-size: 0.8rem;
+    font-size: 0.76rem;
   }
 
   .section {
-    padding: 24px 14px;
+    padding: 34px 14px 24px;
   }
 
   .socialIcon {

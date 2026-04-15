@@ -44,7 +44,6 @@ function Footer() {
 
           {/* Quick Links */}
           <div className={styles.section}>
-            <h4 className={styles.heading}>Quick Links</h4>
             <ul className={styles.list}>
               <li>
                 <Link href="#home" className={styles.link}>
@@ -75,7 +74,6 @@ function Footer() {
 
           {/* Courses */}
           <div className={styles.section}>
-            <h4 className={styles.heading}>Courses</h4>
             <ul className={styles.list}>
               <li>
                 <span className={styles.link}>Graphic Designing</span>
