@@ -32,6 +32,10 @@
   border-right: 0;
 }
 
+.offsetSection {
+  padding-top: 110px;
+}
+
 .heading {
   margin: 0;
   color: #ffffff;
@@ -259,6 +263,10 @@
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
 
+  .offsetSection {
+    padding-top: 56px;
+  }
+
   .section:last-child {
     border-bottom: 0;
   }
@@ -294,6 +302,10 @@
 
   .section {
     padding: 34px 14px 24px;
+  }
+
+  .offsetSection {
+    padding-top: 46px;
   }
 
   .socialIcon {

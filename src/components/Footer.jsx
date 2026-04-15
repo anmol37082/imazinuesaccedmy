@@ -43,7 +43,7 @@ function Footer() {
           </div>
 
           {/* Quick Links */}
-          <div className={styles.section}>
+          <div className={`${styles.section} ${styles.offsetSection}`}>
             <ul className={styles.list}>
               <li>
                 <Link href="#home" className={styles.link}>
@@ -73,7 +73,7 @@ function Footer() {
           </div>
 
           {/* Courses */}
-          <div className={styles.section}>
+          <div className={`${styles.section} ${styles.offsetSection}`}>
             <ul className={styles.list}>
               <li>
                 <span className={styles.link}>Graphic Designing</span>

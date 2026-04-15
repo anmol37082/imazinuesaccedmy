@@ -11,7 +11,7 @@ const courseOptions = [
   "Graphic Designing + Video Editing",
 ];
 
-const SCROLL_TRIGGER = 280;
+const SCROLL_TRIGGER = 520;
 const OPEN_COUNSELLING_EVENT = "openCounsellingModal";
 
 function InquiryForm() {

@@ -83,6 +83,8 @@ const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
 function NewAnimation() {
   const newAnimationRef = useRef(null);
   const frameRef = useRef(null);
+  const animationFrameRef = useRef(null);
+  const targetTransformsRef = useRef(initialTransforms);
   const [transforms, setTransforms] = useState(initialTransforms);
   const [isTextLoaded, setIsTextLoaded] = useState(false);
   const isMobileViewport = useMediaQuery("(max-width: 768px)");
@@ -97,6 +99,30 @@ function NewAnimation() {
 
   useEffect(() => {
     if (isMobileViewport) return undefined;
+
+    const animateTowardsTarget = () => {
+      animationFrameRef.current = null;
+
+      setTransforms((currentTransforms) => {
+        const nextTransforms = currentTransforms.map((value, index) => {
+          const targetValue = targetTransformsRef.current[index];
+          return value + (targetValue - value) * 0.13;
+        });
+
+        const isSettled = nextTransforms.every(
+          (value, index) =>
+            Math.abs(value - targetTransformsRef.current[index]) < 0.08
+        );
+
+        if (!isSettled) {
+          animationFrameRef.current =
+            window.requestAnimationFrame(animateTowardsTarget);
+          return nextTransforms;
+        }
+
+        return targetTransformsRef.current;
+      });
+    };
 
     const updateTransforms = () => {
       const sectionRect = newAnimationRef.current?.getBoundingClientRect();
@@ -132,13 +158,12 @@ function NewAnimation() {
           textConfig.travelDistance * easedTextProgress
       );
 
-      setTransforms((currentTransforms) => {
-        const hasChanged = currentTransforms.some(
-          (value, index) => Math.abs(value - nextTransforms[index]) > 0.1
-        );
+      targetTransformsRef.current = nextTransforms;
 
-        return hasChanged ? nextTransforms : currentTransforms;
-      });
+      if (!animationFrameRef.current) {
+        animationFrameRef.current =
+          window.requestAnimationFrame(animateTowardsTarget);
+      }
     };
 
     const requestUpdate = () => {
@@ -160,6 +185,10 @@ function NewAnimation() {
 
       if (frameRef.current) {
         window.cancelAnimationFrame(frameRef.current);
+      }
+
+      if (animationFrameRef.current) {
+        window.cancelAnimationFrame(animationFrameRef.current);
       }
     };
   }, [isMobileViewport]);

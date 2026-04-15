@@ -132,6 +132,8 @@
   z-index: 3;
   border-radius: 12px;
   bottom: -70px;
+  will-change: transform;
+  backface-visibility: hidden;
 }
 
 .newAnimImage1 { left: 0%; }
@@ -182,6 +184,8 @@
   align-items: center;
   text-align: center;
   z-index: 1;
+  will-change: transform;
+  backface-visibility: hidden;
 }
 
 .desktopBannerTag {

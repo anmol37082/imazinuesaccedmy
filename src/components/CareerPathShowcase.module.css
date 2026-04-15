@@ -152,6 +152,7 @@
 }
 
 .brochureButton {
+  position: relative;
   min-height: 52px;
   margin-top: auto;
   border: 0;
@@ -162,6 +163,58 @@
   font-size: 0.98rem;
   font-weight: 700;
   cursor: pointer;
+  overflow: hidden;
+}
+
+.brochureButton::after {
+  content: "";
+  position: absolute;
+  top: -118%;
+  left: -10%;
+  width: 5%;
+  height: 260%;
+  border-radius: 999px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.3) 16%,
+    rgba(255, 255, 255, 1) 36%,
+    rgba(255, 255, 255, 1) 64%,
+    rgba(255, 255, 255, 0.3) 84%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  filter: blur(2px);
+  opacity: 0;
+  transform: rotate(38deg);
+  pointer-events: none;
+}
+
+.brochureButton:hover::after {
+  animation: brochureButtonSweep 0.9s ease-out 1;
+}
+
+@keyframes brochureButtonSweep {
+  from {
+    top: -118%;
+    left: -14%;
+    opacity: 0;
+    transform: rotate(38deg);
+  }
+
+  16% {
+    opacity: 1;
+  }
+
+  78% {
+    opacity: 1;
+  }
+
+  to {
+    top: -14%;
+    left: 152%;
+    opacity: 0;
+    transform: rotate(38deg);
+  }
 }
 
 .enquiryCard {
