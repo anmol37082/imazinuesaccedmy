@@ -4,8 +4,15 @@ import Link from "next/link";
 import styles from "./VideoEditing.module.css";
 import useMediaQuery from "@/hooks/useMediaQuery";
 
+const OPEN_COUNSELLING_EVENT = "openCounsellingModal";
+
 function VideoEditing() {
   const isMobileViewport = useMediaQuery("(max-width: 540px)");
+
+  const handleOpenCounselling = (event) => {
+    event.preventDefault();
+    window.dispatchEvent(new Event(OPEN_COUNSELLING_EVENT));
+  };
 
   const videoSources = isMobileViewport
     ? {
@@ -45,7 +52,11 @@ function VideoEditing() {
           Your browser does not support the video tag.
         </video>
 
-        <Link href="#inquiry" className={styles.enrollButton}>
+        <Link
+          href="#inquiry"
+          className={styles.enrollButton}
+          onClick={handleOpenCounselling}
+        >
           <span className={styles.btnLabel}>ENROLL NOW</span>
           <svg
             xmlns="http://www.w3.org/2000/svg"

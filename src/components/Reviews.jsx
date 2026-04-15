@@ -261,9 +261,9 @@ function Reviews() {
 
       const rect = sectionRef.current.getBoundingClientRect();
       const viewportHeight = window.innerHeight;
-      const triggerLine = viewportHeight * 0.36;
+      const triggerLine = viewportHeight * (window.innerWidth <= 640 ? 0.68 : 0.36);
       const revealDistance = triggerLine - rect.top;
-      const stepDistance = viewportHeight * 0.15;
+      const stepDistance = viewportHeight * (window.innerWidth <= 640 ? 0.1 : 0.15);
       const cardsPerRow = getCardsPerRow();
       const revealedRows = revealDistance <= 0
         ? 0
@@ -294,6 +294,7 @@ function Reviews() {
       requestUpdate();
     };
 
+    requestUpdate();
     window.addEventListener("scroll", handleScroll, { passive: true });
     window.addEventListener("resize", requestUpdate);
 

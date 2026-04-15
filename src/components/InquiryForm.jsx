@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useMemo, useState } from "react";
+import { submitEnquiry } from "@/utils/submitEnquiry";
 import styles from "./InquiryFormFloating.module.css";
 
 const courseOptions = [
@@ -10,15 +11,19 @@ const courseOptions = [
   "Graphic Designing + Video Editing",
 ];
 
-const WHATSAPP_NUMBER = "918882043435";
 const SCROLL_TRIGGER = 280;
+const OPEN_COUNSELLING_EVENT = "openCounsellingModal";
 
 function InquiryForm() {
   const [isVisible, setIsVisible] = useState(false);
+  const [isFooterVisible, setIsFooterVisible] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isSuccessOpen, setIsSuccessOpen] = useState(false);
   const [selectedCourse, setSelectedCourse] = useState("");
   const [phone, setPhone] = useState("");
   const [hasConsent, setHasConsent] = useState(true);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,48 +37,108 @@ function InquiryForm() {
   }, []);
 
   useEffect(() => {
-    document.body.style.overflow = isModalOpen ? "hidden" : "";
+    document.body.style.overflow =
+      isModalOpen || isSuccessOpen ? "hidden" : "";
 
     return () => {
       document.body.style.overflow = "";
     };
-  }, [isModalOpen]);
+  }, [isModalOpen, isSuccessOpen]);
+
+  useEffect(() => {
+    const handleOpenModal = () => {
+      setIsModalOpen(true);
+    };
+
+    window.addEventListener(OPEN_COUNSELLING_EVENT, handleOpenModal);
+
+    return () => {
+      window.removeEventListener(OPEN_COUNSELLING_EVENT, handleOpenModal);
+    };
+  }, []);
+
+  useEffect(() => {
+    const footerElement = document.getElementById("contact-us");
+
+    if (!footerElement) {
+      return undefined;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsFooterVisible(entry.isIntersecting);
+      },
+      {
+        threshold: 0.08,
+      }
+    );
+
+    observer.observe(footerElement);
+
+    return () => observer.disconnect();
+  }, []);
 
   const isSubmitDisabled = useMemo(() => {
     return !selectedCourse || phone.trim().length < 10 || !hasConsent;
   }, [hasConsent, phone, selectedCourse]);
 
+  const resetForm = () => {
+    setSelectedCourse("");
+    setPhone("");
+    setHasConsent(true);
+    setSubmitError("");
+  };
+
   const handleCloseModal = () => {
     setIsModalOpen(false);
+    setSubmitError("");
+  };
+
+  const handleCloseSuccess = () => {
+    setIsSuccessOpen(false);
   };
 
   const handleLiveChat = () => {
-    window.open(`https://wa.me/${WHATSAPP_NUMBER}`, "_blank", "noopener,noreferrer");
+    window.dispatchEvent(new CustomEvent(OPEN_COUNSELLING_EVENT));
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
     if (isSubmitDisabled) {
       return;
     }
 
-    const message = [
-      "New Counselling Inquiry - Imazineus Academy",
-      `Course: ${selectedCourse}`,
-      `Phone: ${phone.trim()}`,
-    ].join("\n");
+    setIsSubmitting(true);
+    setSubmitError("");
 
-    const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, "_blank", "noopener,noreferrer");
-    handleCloseModal();
+    try {
+      await submitEnquiry({
+        course: selectedCourse,
+        phone: phone.trim(),
+        source: "floating-form",
+      });
+      handleCloseModal();
+      setIsSuccessOpen(true);
+      resetForm();
+    } catch (error) {
+      setSubmitError(
+        error instanceof Error
+          ? error.message
+          : "Unable to submit enquiry right now."
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
     <>
       <div
-        className={`${styles.floatingBar} ${isVisible ? styles.floatingBarVisible : ""}`}
-        aria-hidden={!isVisible}
+        className={`${styles.floatingBar} ${
+          isVisible && !isFooterVisible ? styles.floatingBarVisible : ""
+        }`}
+        aria-hidden={!isVisible || isFooterVisible}
       >
         <div className={styles.floatingBarCopy}>
           <span className={styles.floatingEmoji} aria-hidden="true">
@@ -179,7 +244,7 @@ function InquiryForm() {
                 </label>
 
                 <p className={styles.whatsappHint}>
-                  You will receive updates on WhatsApp
+                  Our team will contact you shortly.
                 </p>
 
                 <label className={styles.consent}>
@@ -193,15 +258,60 @@ function InquiryForm() {
                   </span>
                 </label>
 
+                {submitError ? (
+                  <p className={styles.errorText} role="alert">
+                    {submitError}
+                  </p>
+                ) : null}
+
                 <button
                   type="submit"
                   className={styles.submitButton}
-                  disabled={isSubmitDisabled}
+                  disabled={isSubmitDisabled || isSubmitting}
                 >
-                  Proceed
+                  {isSubmitting ? "Submitting..." : "Proceed"}
                 </button>
               </form>
             </div>
+          </div>
+        </>
+      )}
+
+      {isSuccessOpen && (
+        <>
+          <button
+            type="button"
+            className={styles.overlay}
+            onClick={handleCloseSuccess}
+            aria-label="Close thank you popup"
+          />
+
+          <div
+            className={styles.successModal}
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="success-title"
+          >
+            <button
+              type="button"
+              className={styles.successCloseButton}
+              onClick={handleCloseSuccess}
+              aria-label="Close thank you popup"
+            >
+              &times;
+            </button>
+
+            <div className={styles.successIcon} aria-hidden="true">
+              &#10003;
+            </div>
+
+            <h2 className={styles.successTitle} id="success-title">
+              Thank You!
+            </h2>
+            <p className={styles.successText}>
+              Your enquiry has been submitted successfully.
+            </p>
+            <p className={styles.successHighlight}>We will contact you soon!</p>
           </div>
         </>
       )}

@@ -12,6 +12,7 @@ const navItems = [
   { href: "#inquiry", label: "Enroll" },
   { href: "#contact-us", label: "Contact Us" },
 ];
+const OPEN_COUNSELLING_EVENT = "openCounsellingModal";
 
 function scrambleLabel(label) {
   const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -87,6 +88,17 @@ function HoverText({ label }) {
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const handleNavClick = (event, item) => {
+    setIsMenuOpen(false);
+
+    if (item.label !== "Enroll") {
+      return;
+    }
+
+    event.preventDefault();
+    window.dispatchEvent(new Event(OPEN_COUNSELLING_EVENT));
+  };
+
   return (
     <>
       <nav className="navbar">
@@ -140,7 +152,7 @@ function Header() {
         <ul className="sideMenuList">
           {navItems.map((item) => (
             <li key={item.href}>
-              <Link href={item.href} onClick={() => setIsMenuOpen(false)}>
+              <Link href={item.href} onClick={(event) => handleNavClick(event, item)}>
                 <HoverText label={item.label} />
               </Link>
             </li>
