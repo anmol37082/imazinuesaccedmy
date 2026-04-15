@@ -302,7 +302,19 @@ function InquiryForm() {
             </button>
 
             <div className={styles.successIcon} aria-hidden="true">
-              &#10003;
+              <svg
+                className={styles.successCheck}
+                viewBox="0 0 32 32"
+                fill="none"
+              >
+                <path
+                  d="M8 16.8l5.1 5.4L24 9.8"
+                  stroke="currentColor"
+                  strokeWidth="3.8"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
             </div>
 
             <p className={styles.successBadge}>Enquiry Received</p>
