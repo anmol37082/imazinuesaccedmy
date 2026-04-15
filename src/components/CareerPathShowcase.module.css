@@ -444,6 +444,7 @@
 }
 
 .successIcon {
+  position: relative;
   width: 78px;
   height: 78px;
   margin: 4px auto 12px;
@@ -451,12 +452,29 @@
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  background: linear-gradient(135deg, #00ef02 0%, #11d93c 100%);
-  box-shadow: 0 18px 36px rgba(0, 239, 2, 0.22);
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  background:
+    radial-gradient(circle at 30% 28%, rgba(255, 255, 255, 0.34), transparent 34%),
+    linear-gradient(135deg, #00ef02 0%, #11d93c 100%);
+  box-shadow:
+    inset 0 -10px 18px rgba(12, 116, 28, 0.16),
+    0 18px 36px rgba(0, 239, 2, 0.22);
   color: #ffffff;
-  font-size: 2.55rem;
+  font-size: 2.22rem;
   font-weight: 700;
+  line-height: 1;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
   animation: successIconPop 0.6s cubic-bezier(0.2, 0.9, 0.2, 1);
+  isolation: isolate;
+}
+
+.successIcon::after {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border: 1px solid rgba(23, 199, 75, 0.18);
+  border-radius: 50%;
+  z-index: -1;
 }
 
 .successBadge {

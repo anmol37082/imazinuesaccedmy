@@ -3,10 +3,10 @@ import DigitalMarketing from "@/components/DigitalMarketing";
 import Footer from "@/components/Footer";
 import GraphicDesining from "@/components/GraphicDesining";
 import Header from "@/components/Header";
+import HeroSection from "@/components/HeroSection";
 import HomeBanner2 from "@/components/HomeBanner2";
 import HomeBanner3 from "@/components/HomeBanner3";
 import InquiryForm from "@/components/InquiryForm";
-import NewAnimation from "@/components/NewAnimation";
 import Reviews from "@/components/Reviews";
 import StatsAndFacts from "@/components/StatsAndFacts";
 import VideoEditing from "@/components/VideoEditing";
@@ -16,7 +16,7 @@ function HomePage() {
     <>
       <Header />
       <main id="home">
-        <NewAnimation />
+        <HeroSection />
         <StatsAndFacts />
         <HomeBanner2 />
         <GraphicDesining />

@@ -16,7 +16,7 @@ const courseOptions = [
 
 const courses = [
   {
-    title: "Creative Graphic Design Specialization with Industry-Standard Visual Tools",
+    title: "Visual Futurist: Advanced Graphic Designing Course with Seamless AI Integration",
     tag: "Offline + Online",
     highlights: [
       "Professional Tool Mastery",
@@ -28,7 +28,7 @@ const courses = [
     accent: "linear-gradient(135deg, #0b1220 0%, #1e3a8a 100%)",
   },
   {
-    title: "Next-Gen Video Editing with AI-Driven Documentary & Cinematic Specialisation",
+    title: "The Cinematic Storyteller: Documentary Style Video Editing & Film Making Course",
     tag: "Live + Offline",
     highlights: [
       "1-3 Months Practical Training",
@@ -40,7 +40,7 @@ const courses = [
     accent: "linear-gradient(135deg, #111827 0%, #0f766e 100%)",
   },
   {
-    title: "Strategic Digital Marketing with AI-Powered Growth & ROI Mastery ",
+    title: "The Growth Architect: Strategic Digital Marketing Course with AI-Powered Growth & ROI Mastery ",
     tag: "Live + Online",
     highlights: [
       "Performance Marketing & Ads",

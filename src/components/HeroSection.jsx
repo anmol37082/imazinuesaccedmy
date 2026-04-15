@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import useMediaQuery from "@/hooks/useMediaQuery";
-import styles from "./NewAnimation.module.css";
+import styles from "./HeroSection.module.css";
 
 const mobileBannerImage = "/homepagemobileviewbanner3.webp";
 
@@ -80,7 +80,7 @@ const initialTransforms = [
 
 const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
 
-function NewAnimation() {
+function HeroSection() {
   const newAnimationRef = useRef(null);
   const frameRef = useRef(null);
   const animationFrameRef = useRef(null);
@@ -275,4 +275,4 @@ function NewAnimation() {
   );
 }
 
-export default NewAnimation;
+export default HeroSection;
