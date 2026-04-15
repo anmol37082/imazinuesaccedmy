@@ -1,6 +1,6 @@
 import HomePage from "./HomePage";
 
-const siteUrl = "https://imazineus.com";
+const siteUrl = "https://imazineusacademy.com";
 const pageUrl = `${siteUrl}/`;
 const title =
   "Imazine Us Academy | Graphic Design, Video Editing and Offline Classes";

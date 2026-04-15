@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://imazineus.com/sitemap.xml
+Sitemap: https://imazineusacademy.com/sitemap.xml

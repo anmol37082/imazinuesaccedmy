@@ -1,7 +1,7 @@
 import "./globals.css";
 import Script from "next/script";
 
-const siteUrl = "https://imazineus.com";
+const siteUrl = "https://imazineusacademy.com";
 const title = "Imazine Us Academy";
 const description = "Offline creative courses in Zirakpur.";
 
