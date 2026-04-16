@@ -16,7 +16,9 @@ const courseOptions = [
 
 const courses = [
   {
-    title: "Visual Futurist: Advanced Graphic Designing Course with Seamless AI Integration",
+    titlePrefix: "Advanced ",
+    titleFocus: "Graphic Designing",
+    titleSuffix: " Course with Seamless AI Integration",
     tag: "Offline + Online",
     highlights: [
       "Professional Tool Mastery",
@@ -28,7 +30,9 @@ const courses = [
     accent: "linear-gradient(135deg, #0b1220 0%, #1e3a8a 100%)",
   },
   {
-    title: "The Cinematic Storyteller: Documentary Style Video Editing & Film Making Course",
+    titlePrefix: "Documentary Style ",
+    titleFocus: "Video Editing",
+    titleSuffix: " & Film Making Course",
     tag: "Live + Offline",
     highlights: [
       "1-3 Months Practical Training",
@@ -40,7 +44,9 @@ const courses = [
     accent: "linear-gradient(135deg, #111827 0%, #0f766e 100%)",
   },
   {
-    title: "The Growth Architect: Strategic Digital Marketing Course with AI-Powered Growth & ROI Mastery ",
+    titlePrefix: "Strategic ",
+    titleFocus: "Digital Marketing",
+    titleSuffix: " Course with AI-Powered Growth & ROI Mastery",
     tag: "Live + Online",
     highlights: [
       "Performance Marketing & Ads",
@@ -164,7 +170,7 @@ function CareerPathShowcase() {
               }`}
             >
               {slidingCourses.map((course) => (
-                <article key={course.title} className={styles.courseCard}>
+                <article key={course.titleFocus} className={styles.courseCard}>
                   <div
                     className={styles.cardVisual}
                     style={{ background: course.accent }}
@@ -174,7 +180,17 @@ function CareerPathShowcase() {
                   </div>
 
                   <div className={styles.cardBody}>
-                    <h3 className={styles.cardTitle}>{course.title}</h3>
+                    <h3 className={styles.cardTitle}>
+                      <span className={styles.cardTitleMuted}>
+                        {course.titlePrefix}
+                      </span>
+                      <span className={styles.cardTitleFocus}>
+                        {course.titleFocus}
+                      </span>
+                      <span className={styles.cardTitleMuted}>
+                        {course.titleSuffix}
+                      </span>
+                    </h3>
 
                     <ul className={styles.highlightList}>
                       {course.highlights.map((item) => (

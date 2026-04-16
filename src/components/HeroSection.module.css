@@ -28,6 +28,8 @@
   background: #000000;
   overflow: hidden;
   line-height: normal;
+  animation: none;
+  transition: none;
 }
 
 .mobileBannerImage {
@@ -35,6 +37,8 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  animation: none;
+  transition: none;
 }
 
 .mobileBannerContent {
@@ -49,6 +53,8 @@
   color: #f8f2e8;
   pointer-events: none;
   line-height: normal;
+  animation: none;
+  transition: none;
 }
 
 .mobileBannerTag {
@@ -66,6 +72,8 @@
   font-weight: 700;
   line-height: 1;
   transform: translateY(-14px);
+  animation: none;
+  transition: none;
 }
 
 .mobileBannerTitle {
@@ -77,6 +85,8 @@
   line-height: 0.9;
   letter-spacing: 0.01em;
   text-shadow: 0 3px 14px rgba(0, 0, 0, 0.35);
+  animation: none;
+  transition: none;
 }
 
 .mobileBannerSubtitle {
@@ -88,6 +98,8 @@
   font-weight: 700;
   line-height: 1.24;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  animation: none;
+  transition: none;
 }
 
 .newAnimationStage {
