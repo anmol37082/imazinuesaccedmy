@@ -211,6 +211,26 @@
   text-shadow: 0 6px 22px rgba(0, 0, 0, 0.38);
 }
 
+.designWord {
+  position: relative;
+  display: inline-block;
+}
+
+.designLetterN {
+  position: relative;
+  display: inline-block;
+}
+
+.designSticker {
+  position: absolute;
+  left: 192%;
+  bottom: calc(100% - 1.05em);
+  width: clamp(124px, 11.6vw, 186px);
+  height: auto;
+  transform: translateX(-50%) rotate(-12deg);
+  pointer-events: none;
+}
+
 .desktopBannerSubtitle {
   max-width: min(70vw, 880px);
   margin: 26px 0 0;

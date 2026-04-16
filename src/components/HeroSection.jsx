@@ -34,7 +34,7 @@ const imageConfigs = [
   },
   {
     src: "/newanimation/image 4.png",
-    startTranslate: 42,
+    startTranslate: 34,
     travelDistance: 108,
     startOffset: 0.01,
     travelWindow: 0.6,
@@ -244,7 +244,21 @@ function HeroSection() {
             >
               <p className={styles.desktopBannerTag}>Design Academy</p>
               <h1 className={styles.desktopBannerTitle}>
-                LET&apos;S DESIGN
+                LET&apos;S{" "}
+                <span className={styles.designWord}>
+                  DESIG
+                  <span className={styles.designLetterN}>
+                    N
+                    <Image
+                      src="/STICKER.png"
+                      alt=""
+                      aria-hidden="true"
+                      className={styles.designSticker}
+                      width={120}
+                      height={120}
+                    />
+                  </span>
+                </span>
                 <br />
                 SOMETHING CREATIVE
               </h1>
