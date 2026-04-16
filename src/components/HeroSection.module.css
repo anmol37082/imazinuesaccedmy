@@ -20,6 +20,14 @@
   isolation: isolate;
 }
 
+.desktopOnly {
+  display: block;
+}
+
+.mobileOnly {
+  display: none;
+}
+
 .mobileBannerSection {
   position: relative;
   width: 100vw;
@@ -255,6 +263,14 @@
 }
 
 @media (max-width: 768px) {
+  .desktopOnly {
+    display: none;
+  }
+
+  .mobileOnly {
+    display: block;
+  }
+
   .newAnimation {
     height: auto;
     min-height: 0;

@@ -98,7 +98,13 @@ function HeroSection() {
   }, []);
 
   useEffect(() => {
-    if (isMobileViewport) return undefined;
+    if (
+      isMobileViewport ||
+      typeof window === "undefined" ||
+      window.matchMedia("(max-width: 768px)").matches
+    ) {
+      return undefined;
+    }
 
     const animateTowardsTarget = () => {
       animationFrameRef.current = null;
@@ -193,9 +199,9 @@ function HeroSection() {
     };
   }, [isMobileViewport]);
 
-  if (isMobileViewport) {
-    return (
-      <section className={styles.mobileBannerSection}>
+  return (
+    <>
+      <section className={`${styles.mobileBannerSection} ${styles.mobileOnly}`}>
         <Image
           src={mobileBannerImage}
           alt="Imazine Us Academy mobile banner"
@@ -222,70 +228,71 @@ function HeroSection() {
           </p>
         </div>
       </section>
-    );
-  }
 
-  return (
-    <section ref={newAnimationRef} className={styles.newAnimation}>
-      <div className={styles.newAnimationStage}>
-        <div className={styles.newAnimationBg}>
-          <div className={styles.newAnimationImage} />
+      <section
+        ref={newAnimationRef}
+        className={`${styles.newAnimation} ${styles.desktopOnly}`}
+      >
+        <div className={styles.newAnimationStage}>
+          <div className={styles.newAnimationBg}>
+            <div className={styles.newAnimationImage} />
 
-          <div
-            className={`${styles.textImageWrap} ${
-              isTextLoaded ? styles.textImageLoaded : ""
-            }`}
-          >
             <div
-              className={styles.desktopBannerText}
-              style={{
-                transform: `translateX(-50%) translateY(${transforms[7]}px)`,
-              }}
+              className={`${styles.textImageWrap} ${
+                isTextLoaded ? styles.textImageLoaded : ""
+              }`}
             >
-              <p className={styles.desktopBannerTag}>Design Academy</p>
-              <h1 className={styles.desktopBannerTitle}>
-                LET&apos;S{" "}
-                <span className={styles.designWord}>
-                  DESIG
-                  <span className={styles.designLetterN}>
-                    N
-                    <Image
-                      src="/STICKER.png"
-                      alt=""
-                      aria-hidden="true"
-                      className={styles.designSticker}
-                      width={120}
-                      height={120}
-                    />
+              <div
+                className={styles.desktopBannerText}
+                style={{
+                  transform: `translateX(-50%) translateY(${transforms[7]}px)`,
+                }}
+              >
+                <p className={styles.desktopBannerTag}>Design Academy</p>
+                <h1 className={styles.desktopBannerTitle}>
+                  LET&apos;S{" "}
+                  <span className={styles.designWord}>
+                    DESIG
+                    <span className={styles.designLetterN}>
+                      N
+                      <Image
+                        src="/STICKER.png"
+                        alt=""
+                        aria-hidden="true"
+                        className={styles.designSticker}
+                        width={120}
+                        height={120}
+                      />
+                    </span>
                   </span>
-                </span>
-                <br />
-                SOMETHING CREATIVE
-              </h1>
-              <p className={styles.desktopBannerSubtitle}>
-                Best Graphics &amp; Video Editing Institute in Chandigarh |
-                Panchkula | Mohali
-              </p>
+                  <br />
+                  SOMETHING CREATIVE
+                </h1>
+                <p className={styles.desktopBannerSubtitle}>
+                  Best Graphics &amp; Video Editing Institute in Chandigarh |
+                  Panchkula | Mohali
+                </p>
+              </div>
             </div>
+
+            {imageConfigs.map((image, index) => (
+              <Image
+                key={image.src}
+                src={image.src}
+                alt={`New Animation ${index + 1}`}
+                className={`${styles.newAnimImage} ${styles[`newAnimImage${index + 1}`]}`}
+                style={{ transform: `translateY(${transforms[index]}%)` }}
+                width={420}
+                height={720}
+                sizes="14vw"
+              />
+            ))}
+
+            <div className={styles.newOverlay} />
           </div>
-
-          {imageConfigs.map((image, index) => (
-            <Image
-              key={image.src}
-              src={image.src}
-              alt={`New Animation ${index + 1}`}
-              className={`${styles.newAnimImage} ${styles[`newAnimImage${index + 1}`]}`}
-              style={{ transform: `translateY(${transforms[index]}%)` }}
-              width={420}
-              height={720}
-              sizes="14vw"
-            />
-          ))}
-
-          <div className={styles.newOverlay} />
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }
 
