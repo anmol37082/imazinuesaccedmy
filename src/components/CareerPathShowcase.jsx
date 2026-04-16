@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useEffect, useMemo, useState } from "react";
 import { submitEnquiry } from "@/utils/submitEnquiry";
 import useMediaQuery from "@/hooks/useMediaQuery";
+import SuccessConfetti from "./SuccessConfetti";
 import styles from "./CareerPathShowcase.module.css";
 
 const courseOptions = [
@@ -13,6 +14,8 @@ const courseOptions = [
   "Web Development",
   "Graphic Designing + Video Editing",
 ];
+
+
 
 const courses = [
   {
@@ -297,6 +300,7 @@ function CareerPathShowcase() {
 
       {isSuccessOpen && (
         <>
+          <SuccessConfetti />
           <button
             type="button"
             className={styles.overlay}
@@ -316,7 +320,9 @@ function CareerPathShowcase() {
               onClick={() => setIsSuccessOpen(false)}
               aria-label="Close thank you popup"
             >
-              &times;
+              <span className={styles.successCloseIcon} aria-hidden="true">
+                &times;
+              </span>
             </button>
 
             <div className={styles.successIcon} aria-hidden="true">
@@ -335,14 +341,14 @@ function CareerPathShowcase() {
               </svg>
             </div>
 
-            <p className={styles.successBadge}>Enquiry Received</p>
+            <p className={styles.successBadge}>Enquiry received</p>
 
             <h2 className={styles.successTitle} id="career-success-title">
               Thank You!
             </h2>
             <p className={styles.successText}>
-              Your enquiry has been submitted successfully. Our counselling team
-              will review it and call you shortly.
+              Enquiry submitted successfully. Our counselling team will call you
+              shortly.
             </p>
             <p className={styles.successHighlight}>
               Keep your phone nearby for the next step.
