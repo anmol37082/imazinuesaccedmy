@@ -13,6 +13,7 @@ const navItems = [
   { href: "#contact-us", label: "Contact Us" },
 ];
 const OPEN_COUNSELLING_EVENT = "openCounsellingModal";
+const BOOK_A_CALL_NUMBER = "8264912163";
 
 function scrambleLabel(label) {
   const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -88,6 +89,17 @@ function HoverText({ label }) {
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const handleBookACall = () => {
+    if (window.matchMedia("(max-width: 768px)").matches) {
+      window.location.href = `tel:${BOOK_A_CALL_NUMBER}`;
+      setIsMenuOpen(false);
+      return;
+    }
+
+    window.dispatchEvent(new Event(OPEN_COUNSELLING_EVENT));
+    setIsMenuOpen(false);
+  };
+
   const handleNavClick = (event, item) => {
     setIsMenuOpen(false);
 
@@ -114,7 +126,7 @@ function Header() {
         </div>
 
         <div className="right">
-          <button className="btn headerButton">
+          <button className="btn headerButton" type="button" onClick={handleBookACall}>
             <span className="btnLabel">BOOK A CALL</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -159,7 +171,7 @@ function Header() {
           ))}
         </ul>
 
-        <button className="btn mobileDrawerButton">
+        <button className="btn mobileDrawerButton" type="button" onClick={handleBookACall}>
           <span className="btnLabel">BOOK A CALL</span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
