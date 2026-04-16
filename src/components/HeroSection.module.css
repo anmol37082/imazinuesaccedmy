@@ -79,7 +79,6 @@
   font-size: clamp(0.98rem, 4.15vw, 1.55rem);
   font-weight: 700;
   line-height: 1;
-  transform: translateY(-14px);
   animation: none;
   transition: none;
 }
@@ -326,7 +325,6 @@
 
   .mobileBannerContent {
     inset: clamp(112px, 26vw, 156px) clamp(12px, 4vw, 18px) auto;
-    transform: translateY(clamp(-8px, calc((100vw - 570px) * 0.08), 0px));
   }
 
   .mobileBannerTag {
@@ -347,7 +345,6 @@
 @media (max-width: 400px) {
   .mobileBannerContent {
     inset: clamp(104px, 28vw, 144px) 12px auto;
-    transform: translateY(clamp(-14px, calc((100vw - 570px) * 0.1), 0px));
   }
 
   .mobileBannerTag {
@@ -372,7 +369,6 @@
 @media (max-width: 320px) {
   .mobileBannerContent {
     inset: 88px 10px auto;
-    transform: translateY(-28px);
   }
 
   .mobileBannerTag {
