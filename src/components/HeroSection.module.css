@@ -276,7 +276,7 @@
   }
 
   .newAnimationStage {
-    height: 100dvh;
+    height: 100svh;
   }
 
   .newAnimationBg {
@@ -302,24 +302,24 @@
   }
 
   .mobileBannerSection {
-    min-height: 100dvh;
+    min-height: 100svh;
     aspect-ratio: auto;
   }
 
   .mobileBannerImage {
-    min-height: 100dvh;
+    min-height: 100svh;
     object-fit: cover;
   }
 }
 
 @media (max-width: 570px) {
   .mobileBannerSection {
-    min-height: 100dvh;
+    min-height: 100svh;
     aspect-ratio: auto;
   }
 
   .mobileBannerImage {
-    min-height: 100dvh;
+    min-height: 100svh;
     height: 100%;
   }
 
