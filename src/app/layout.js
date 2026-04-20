@@ -2,8 +2,8 @@ import "./globals.css";
 import Script from "next/script";
 
 const siteUrl = "https://imazineusacademy.com";
-const title = "Imazine Us Academy";
-const description = "Offline creative courses in Zirakpur.";
+const title = "Best Digital Marketing Institute In Chandigarh | Panchkula | Mohali";
+const description = "Living in Chandigarh, Panchkula or Mohali and still searching for the best digital marketing institute near me? No need to worry just join Imazine Us Academy today";
 
 export const metadata = {
   metadataBase: new URL(siteUrl),

@@ -6,7 +6,12 @@ import styles from "./Footer.module.css";
 const OPEN_COUNSELLING_EVENT = "openCounsellingModal";
 const WHATSAPP_NUMBER = "918882043435";
 
+/**
+ * Footer组件 - 网站底部组件
+ * 包含学校介绍、快速链接、课程信息、联系方式等内容
+ */
 function Footer() {
+  // 获取当前年份，用于版权信息
   const currentYear = new Date().getFullYear();
 
   const handleOpenCounselling = (event) => {
