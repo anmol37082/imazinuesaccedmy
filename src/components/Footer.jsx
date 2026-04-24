@@ -4,7 +4,7 @@ import Link from "next/link";
 import styles from "./Footer.module.css";
 
 const OPEN_COUNSELLING_EVENT = "openCounsellingModal";
-const WHATSAPP_NUMBER = "918882043435";
+const WHATSAPP_NUMBER = "917743007077";
 
 /**
  * Footer组件 - 网站底部组件
@@ -105,7 +105,10 @@ function Footer() {
                 Dhakoli, Zirakpur, Punjab 160104
               </p>
               <p className={styles.text}>
-                <strong>Phone:</strong> +91 8882043435
+                <strong>Areas served:</strong> Chandigarh | Panchkula | Mohali
+              </p>
+              <p className={styles.text}>
+                <strong>Phone:</strong> +91 7743007077
               </p>
               <p className={styles.text}>
                 <strong>Phone:</strong> +91 8264912163

@@ -62,6 +62,11 @@
   letter-spacing: 0.02em;
 }
 
+.text strong {
+  color: #ffffff;
+  font-weight: 400;
+}
+
 .list {
   margin: 0;
   padding: 0;

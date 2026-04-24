@@ -22,7 +22,8 @@ const courses = [
     titlePrefix: "Advanced ",
     titleFocus: "Graphic Designing",
     titleSuffix: " Course with Seamless AI Integration",
-    tag: "Offline + Online",
+    tag: "Offline",
+    image: "/courses/Graphic%20Design.webp",
     highlights: [
       "High-Ticket Branding Portfolio",
       "AI-Powered Creative Workflow",
@@ -36,7 +37,8 @@ const courses = [
     titlePrefix: "Documentary Style ",
     titleFocus: "Video Editing",
     titleSuffix: " & Film Making Course",
-    tag: "Live + Offline",
+    tag: "Offline",
+    image: "/courses/Video%20Editing.webp",
     highlights: [
       "Cinematic B-Roll & Visual Flow Techniques",
       "Advanced Sound & Color Grading Architecture",
@@ -50,7 +52,8 @@ const courses = [
     titlePrefix: "Strategic ",
     titleFocus: "Digital Marketing",
     titleSuffix: " Course with AI-Powered Growth & ROI Mastery",
-    tag: "Live + Online",
+    tag: "Offline",
+    image: "/courses/Digital%20Marketing.webp",
     highlights: [
       "Performance Marketing & ROI Optimization",
       "AI-Driven Lead Generation Funnels",
@@ -178,6 +181,14 @@ function CareerPathShowcase() {
                     className={styles.cardVisual}
                     style={{ background: course.accent }}
                   >
+                    <Image
+                      src={course.image}
+                      alt={course.titleFocus}
+                      fill
+                      className={styles.cardImage}
+                      sizes="(max-width: 820px) 100vw, 33vw"
+                    />
+                    <div className={styles.cardImageOverlay} />
                     <span className={styles.cardTag}>{course.tag}</span>
                     <div className={styles.visualGlow} />
                   </div>

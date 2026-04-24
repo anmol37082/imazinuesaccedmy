@@ -13,7 +13,7 @@ const navItems = [
   { href: "#contact-us", label: "Contact Us" },
 ];
 const OPEN_COUNSELLING_EVENT = "openCounsellingModal";
-const BOOK_A_CALL_NUMBER = "8264912163";
+const BOOK_A_CALL_NUMBER = "7743007077";
 
 function scrambleLabel(label) {
   const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
